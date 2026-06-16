@@ -293,51 +293,8 @@
       font-size: 9pt;
     }
 
-    .visual-strip {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4mm;
-      margin: 5mm 0 6mm;
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-
-    .visual-card {
-      min-height: 50mm;
-      padding: 4mm;
-      border: 0.25mm solid var(--line);
-      background: #fbfcfe;
-      text-align: center;
-    }
-
-    .visual-card img {
-      width: 24mm;
-      height: 24mm;
-      max-height: 24mm;
-      margin: 0 auto 3mm;
-      border: 0;
-      opacity: 0.9;
-    }
-
-    .visual-card strong {
-      display: block;
-      color: var(--accent-dark);
-      font-size: 11pt;
-      line-height: 1.25;
-    }
-
-    .visual-card span {
-      display: block;
-      margin-top: 1.8mm;
-      color: var(--muted);
-      font-size: 9.2pt;
-      line-height: 1.38;
-    }
-
-    @media screen {
-      .visual-strip {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
+    p img[src*="/diagrams/training/"] {
+      max-height: 132mm;
     }
   </style>
 </head>
@@ -380,28 +337,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>ROBODRILL 구조에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -416,30 +352,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="ROBODRILL 구조 참고 이미지"></p>
 <p class="caption">그림 1-1. ROBODRILL 구조 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item01_study.svg" alt="ROBODRILL 구조 기능 학습 도해"></p>
+<p class="caption">그림 1-2. ROBODRILL 구조의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>ROBODRILL 구조의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -451,28 +369,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -488,28 +385,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -522,28 +398,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -640,28 +495,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>전원 ON/OFF에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -676,30 +510,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_panel.webp" alt="전원 ON/OFF 참고 이미지"></p>
 <p class="caption">그림 2-1. 전원 ON/OFF 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item02_study.svg" alt="전원 ON/OFF 기능 학습 도해"></p>
+<p class="caption">그림 2-2. 전원 ON/OFF의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>전원 ON/OFF의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -711,28 +527,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -748,28 +543,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -782,28 +556,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -900,28 +653,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>원점복귀에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -936,30 +668,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training_flow.svg" alt="원점복귀 참고 이미지"></p>
 <p class="caption">그림 3-1. 원점복귀 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item03_study.svg" alt="원점복귀 기능 학습 도해"></p>
+<p class="caption">그림 3-2. 원점복귀의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>원점복귀의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -971,28 +685,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -1008,28 +701,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -1042,28 +714,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -1160,28 +811,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>JOG 이동에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -1196,30 +826,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/axis_coordinate.svg" alt="JOG 이동 참고 이미지"></p>
 <p class="caption">그림 4-1. JOG 이동 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item04_study.svg" alt="JOG 이동 기능 학습 도해"></p>
+<p class="caption">그림 4-2. JOG 이동의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>JOG 이동의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -1231,28 +843,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -1268,28 +859,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -1302,28 +872,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -1420,28 +969,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>HANDLE 이동에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -1456,30 +984,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/axis_coordinate.svg" alt="HANDLE 이동 참고 이미지"></p>
 <p class="caption">그림 5-1. HANDLE 이동 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item05_study.svg" alt="HANDLE 이동 기능 학습 도해"></p>
+<p class="caption">그림 5-2. HANDLE 이동의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>HANDLE 이동의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -1491,28 +1001,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -1528,28 +1017,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -1562,28 +1030,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -1680,28 +1127,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>좌표계 이해에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -1716,30 +1142,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/axis_coordinate.svg" alt="좌표계 이해 참고 이미지"></p>
 <p class="caption">그림 6-1. 좌표계 이해 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item06_study.svg" alt="좌표계 이해 기능 학습 도해"></p>
+<p class="caption">그림 6-2. 좌표계 이해의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>좌표계 이해의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -1751,28 +1159,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -1788,28 +1175,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -1822,28 +1188,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -1940,28 +1285,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>MDI 사용법에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -1976,30 +1300,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_panel.webp" alt="MDI 사용법 참고 이미지"></p>
 <p class="caption">그림 7-1. MDI 사용법 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item07_study.svg" alt="MDI 사용법 기능 학습 도해"></p>
+<p class="caption">그림 7-2. MDI 사용법의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>MDI 사용법의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -2011,28 +1317,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -2048,28 +1333,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -2082,28 +1346,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -2200,28 +1443,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>프로그램 호출에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -2236,30 +1458,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_panel.webp" alt="프로그램 호출 참고 이미지"></p>
 <p class="caption">그림 8-1. 프로그램 호출 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item08_study.svg" alt="프로그램 호출 기능 학습 도해"></p>
+<p class="caption">그림 8-2. 프로그램 호출의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>프로그램 호출의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -2271,28 +1475,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -2308,28 +1491,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -2342,28 +1504,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -2460,28 +1601,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>공구교환에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -2496,30 +1616,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_tool_changer.webp" alt="공구교환 참고 이미지"></p>
 <p class="caption">그림 9-1. 공구교환 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item09_study.svg" alt="공구교환 기능 학습 도해"></p>
+<p class="caption">그림 9-2. 공구교환의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>공구교환의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -2531,28 +1633,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -2568,28 +1649,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -2602,28 +1662,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -2720,28 +1759,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>Tool Offset에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -2756,30 +1774,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_tool_changer.webp" alt="Tool Offset 참고 이미지"></p>
 <p class="caption">그림 10-1. Tool Offset 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item10_study.svg" alt="Tool Offset 기능 학습 도해"></p>
+<p class="caption">그림 10-2. Tool Offset의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>Tool Offset의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -2791,28 +1791,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -2828,28 +1807,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -2862,28 +1820,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -2980,28 +1917,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>Work Offset에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -3016,30 +1932,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/axis_coordinate.svg" alt="Work Offset 참고 이미지"></p>
 <p class="caption">그림 11-1. Work Offset 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item11_study.svg" alt="Work Offset 기능 학습 도해"></p>
+<p class="caption">그림 11-2. Work Offset의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>Work Offset의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -3051,28 +1949,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -3088,28 +1965,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -3122,28 +1978,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -3240,28 +2075,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>프로그램 기본 구조에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -3276,30 +2090,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training_flow.svg" alt="프로그램 기본 구조 참고 이미지"></p>
 <p class="caption">그림 12-1. 프로그램 기본 구조 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item12_study.svg" alt="프로그램 기본 구조 기능 학습 도해"></p>
+<p class="caption">그림 12-2. 프로그램 기본 구조의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>프로그램 기본 구조의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -3311,28 +2107,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -3348,28 +2123,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -3382,28 +2136,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -3500,28 +2233,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>드라이런과 싱글블록에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -3536,30 +2248,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training_flow.svg" alt="드라이런과 싱글블록 참고 이미지"></p>
 <p class="caption">그림 13-1. 드라이런과 싱글블록 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item13_study.svg" alt="드라이런과 싱글블록 기능 학습 도해"></p>
+<p class="caption">그림 13-2. 드라이런과 싱글블록의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>드라이런과 싱글블록의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -3571,28 +2265,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -3608,28 +2281,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -3642,28 +2294,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -3760,28 +2391,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>절삭유와 칩 관리에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -3796,30 +2406,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="절삭유와 칩 관리 참고 이미지"></p>
 <p class="caption">그림 14-1. 절삭유와 칩 관리 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item14_study.svg" alt="절삭유와 칩 관리 기능 학습 도해"></p>
+<p class="caption">그림 14-2. 절삭유와 칩 관리의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>절삭유와 칩 관리의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -3831,28 +2423,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -3868,28 +2439,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -3902,28 +2452,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -4020,28 +2549,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>소재 고정과 바이스에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -4056,30 +2564,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="소재 고정과 바이스 참고 이미지"></p>
 <p class="caption">그림 15-1. 소재 고정과 바이스 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item15_study.svg" alt="소재 고정과 바이스 기능 학습 도해"></p>
+<p class="caption">그림 15-2. 소재 고정과 바이스의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>소재 고정과 바이스의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -4091,28 +2581,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -4128,28 +2597,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -4162,28 +2610,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -4280,28 +2707,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>공구 상태 점검에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -4316,30 +2722,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_tool_changer.webp" alt="공구 상태 점검 참고 이미지"></p>
 <p class="caption">그림 16-1. 공구 상태 점검 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item16_study.svg" alt="공구 상태 점검 기능 학습 도해"></p>
+<p class="caption">그림 16-2. 공구 상태 점검의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>공구 상태 점검의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -4351,28 +2739,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -4388,28 +2755,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -4422,28 +2768,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -4540,28 +2865,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>알람 확인과 기본 대응에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -4576,30 +2880,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_panel.webp" alt="알람 확인과 기본 대응 참고 이미지"></p>
 <p class="caption">그림 17-1. 알람 확인과 기본 대응 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item17_study.svg" alt="알람 확인과 기본 대응 기능 학습 도해"></p>
+<p class="caption">그림 17-2. 알람 확인과 기본 대응의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>알람 확인과 기본 대응의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -4611,28 +2897,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -4648,28 +2913,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -4682,28 +2926,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -4800,28 +3023,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>품질 확인 기초에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -4836,30 +3038,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="품질 확인 기초 참고 이미지"></p>
 <p class="caption">그림 18-1. 품질 확인 기초 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item18_study.svg" alt="품질 확인 기초 기능 학습 도해"></p>
+<p class="caption">그림 18-2. 품질 확인 기초의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>품질 확인 기초의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -4871,28 +3055,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -4908,28 +3071,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -4942,28 +3084,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -5060,28 +3181,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>작업 기록지 작성에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -5096,30 +3196,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training_flow.svg" alt="작업 기록지 작성 참고 이미지"></p>
 <p class="caption">그림 19-1. 작업 기록지 작성 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item19_study.svg" alt="작업 기록지 작성 기능 학습 도해"></p>
+<p class="caption">그림 19-2. 작업 기록지 작성의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>작업 기록지 작성의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -5131,28 +3213,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -5168,28 +3229,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -5202,28 +3242,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>
@@ -5320,28 +3339,7 @@
 <div class="page-break"></div>
 <h2>안전사항</h2>
 <p>첫 가공 실습에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+<p>이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.</p>
 <table>
 <thead><tr><th>위험 상황</th><th>발생 원인</th><th>예방 행동</th></tr></thead>
 <tbody>
@@ -5356,30 +3354,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="첫 가공 실습 참고 이미지"></p>
 <p class="caption">그림 20-1. 첫 가공 실습 교육용 참고 이미지. 출처와 사용권은 이미지 출처 문서에 기록한다.</p>
 <p>이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item20_study.svg" alt="첫 가공 실습 기능 학습 도해"></p>
+<p class="caption">그림 20-2. 첫 가공 실습의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+<p>도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.</p>
 <h2>핵심 개념</h2>
 <p>첫 가공 실습의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+<p>위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.</p>
 <table>
 <thead><tr><th>핵심 용어</th><th>의미</th><th>현장 확인</th></tr></thead>
 <tbody>
@@ -5391,28 +3371,7 @@
 <div class="page-break"></div>
 <h2>단계별 절차</h2>
 <p>다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+<p>절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.</p>
 <ol>
 <li>작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.</li>
 <li>CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.</li>
@@ -5428,28 +3387,7 @@
 </div>
 <div class="page-break"></div>
 <h2>현장 체크리스트</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+<p>체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <table>
 <thead><tr><th>점검 항목</th><th>정상 기준</th><th>이상 시 조치</th></tr></thead>
 <tbody>
@@ -5462,28 +3400,7 @@
 <p>체크리스트는 서류 작업이 아니라 사고를 줄이는 장치이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.</p>
 <div class="page-break"></div>
 <h2>실습</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+<p>실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.</p>
 <h3>실습 A: 상태 읽기</h3>
 <ol>
 <li>화면에서 현재 모드와 알람 상태를 읽는다.</li>

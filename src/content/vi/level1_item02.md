@@ -40,28 +40,7 @@ Mục này giúp học viên mới hiểu và giải thích an toàn nội dung 
 
 Thời điểm nguy hiểm nhất trong Bật và tắt nguồn là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.
 
 | Tình huống nguy hiểm | Nguyên nhân | Cách phòng tránh |
 | --- | --- | --- |
@@ -82,32 +61,17 @@ Thời điểm nguy hiểm nhất trong Bật và tắt nguồn là khi người
 
 Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.
 
+![Sơ đồ học chức năng Bật và tắt nguồn](../../assets/diagrams/training/level1_item02_study.svg)
+
+<p class="caption">Hình 2-2. Sơ đồ học cho Bật và tắt nguồn, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+
+Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.
+
 ## Khái niệm cốt lõi
 
 Điểm cốt lõi của Bật và tắt nguồn không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.
 
 | Thuật ngữ | Ý nghĩa | Kiểm tra tại hiện trường |
 | --- | --- | --- |
@@ -122,28 +86,7 @@ Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. 
 
 Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.
 
 1. Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.
 2. Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.
@@ -162,28 +105,7 @@ Thực hành: Tại vị trí đào tạo do giảng viên chỉ định, học 
 
 ## Checklist tại hiện trường
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.
 
 | Hạng mục kiểm tra | Tiêu chuẩn bình thường | Xử lý khi bất thường |
 | --- | --- | --- |
@@ -199,28 +121,7 @@ Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm 
 
 ## Thực hành
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.
 
 ### Thực hành A: Đọc trạng thái
 

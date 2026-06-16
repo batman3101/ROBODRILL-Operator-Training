@@ -82,86 +82,25 @@ function assetPath(item) {
   return `../../assets/${folder}/${item.image}`;
 }
 
-function iconPath(name) {
-  return `../../assets/icons/bootstrap/${name}.svg`;
+function studyDiagramPath(item) {
+  return `../../assets/diagrams/training/level1_item${item.id}_study.svg`;
 }
 
-function visualStrip(cards) {
-  const body = cards.map((card) => `<div class="visual-card">
-<img src="${iconPath(card.icon)}" alt="${card.title}">
-<strong>${card.title}</strong>
-<span>${card.note}</span>
-</div>`).join("\n");
-  return `<div class="visual-strip">
-${body}
-</div>`;
+function koStudyFigure(item, title) {
+  return `![${title} 기능 학습 도해](${studyDiagramPath(item)})
+
+<p class="caption">그림 ${Number(item.id)}-2. ${title}의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+
+도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.`;
 }
 
-const koVisuals = {
-  safety: [
-    { icon: "shield-exclamation", title: "위험 인지", note: "움직일 수 있는 부위를 먼저 찾는다" },
-    { icon: "eye", title: "상태 관찰", note: "화면과 실제 위치를 함께 본다" },
-    { icon: "stop-circle", title: "즉시 정지", note: "예상과 다르면 먼저 멈춘다" },
-    { icon: "clipboard-check", title: "보고 기록", note: "알람과 조건을 남긴다" }
-  ],
-  concept: [
-    { icon: "diagram-3", title: "관계 이해", note: "버튼, 화면, 장치 움직임을 연결한다" },
-    { icon: "crosshair", title: "기준 확인", note: "좌표와 기준면을 구분한다" },
-    { icon: "tools", title: "공구 상태", note: "공구와 홀더 상태를 확인한다" },
-    { icon: "bullseye", title: "목표 위치", note: "가야 할 위치와 위험 위치를 나눈다" }
-  ],
-  procedure: [
-    { icon: "list-check", title: "순서 확인", note: "작업 전 흐름을 말로 설명한다" },
-    { icon: "speedometer2", title: "속도 제한", note: "첫 동작은 낮은 오버라이드로 시작한다" },
-    { icon: "arrows-move", title: "짧은 이동", note: "한 번 움직이고 멈춰서 본다" },
-    { icon: "check2-square", title: "다음 단계", note: "정상일 때만 다음으로 간다" }
-  ],
-  checklist: [
-    { icon: "clipboard-check", title: "점검표", note: "누락 없이 확인한다" },
-    { icon: "exclamation-triangle", title: "이상 표시", note: "알람과 메시지를 읽는다" },
-    { icon: "gear", title: "기계 조건", note: "도어, Servo, 오버라이드를 본다" },
-    { icon: "journal-check", title: "작업 기록", note: "누가 봐도 재현 가능하게 적는다" }
-  ],
-  practice: [
-    { icon: "eye", title: "보고 읽기", note: "먼저 보고 말한 뒤 조작한다" },
-    { icon: "cursor", title: "조작 선택", note: "버튼과 메뉴 이름을 확인한다" },
-    { icon: "pencil-square", title: "결과 작성", note: "실습 결과와 질문을 적는다" },
-    { icon: "question-circle", title: "질문", note: "불확실하면 멈추고 묻는다" }
-  ]
-};
+function viStudyFigure(item, title) {
+  return `![Sơ đồ học chức năng ${title}](${studyDiagramPath(item)})
 
-const viVisuals = {
-  safety: [
-    { icon: "shield-exclamation", title: "Nhận biết rủi ro", note: "Tìm bộ phận có thể chuyển động trước" },
-    { icon: "eye", title: "Quan sát trạng thái", note: "Nhìn cả màn hình và vị trí thật" },
-    { icon: "stop-circle", title: "Dừng ngay", note: "Nếu khác dự đoán thì dừng trước" },
-    { icon: "clipboard-check", title: "Báo cáo", note: "Ghi alarm và điều kiện phát sinh" }
-  ],
-  concept: [
-    { icon: "diagram-3", title: "Hiểu liên hệ", note: "Nối nút, màn hình và chuyển động máy" },
-    { icon: "crosshair", title: "Xác nhận chuẩn", note: "Phân biệt tọa độ và mặt chuẩn" },
-    { icon: "tools", title: "Tình trạng dao", note: "Kiểm tra dao và holder" },
-    { icon: "bullseye", title: "Vị trí mục tiêu", note: "Tách vị trí cần đến và vùng nguy hiểm" }
-  ],
-  procedure: [
-    { icon: "list-check", title: "Xác nhận thứ tự", note: "Nói quy trình trước khi thao tác" },
-    { icon: "speedometer2", title: "Giới hạn tốc độ", note: "Bắt đầu với override thấp" },
-    { icon: "arrows-move", title: "Di chuyển ngắn", note: "Chạy một bước rồi dừng quan sát" },
-    { icon: "check2-square", title: "Bước tiếp theo", note: "Chỉ tiếp tục khi trạng thái bình thường" }
-  ],
-  checklist: [
-    { icon: "clipboard-check", title: "Checklist", note: "Kiểm tra không bỏ sót" },
-    { icon: "exclamation-triangle", title: "Dấu hiệu bất thường", note: "Đọc alarm và thông báo" },
-    { icon: "gear", title: "Điều kiện máy", note: "Xem cửa, Servo và override" },
-    { icon: "journal-check", title: "Phiếu ghi", note: "Ghi đủ để người khác hiểu lại" }
-  ],
-  practice: [
-    { icon: "eye", title: "Đọc và báo cáo", note: "Quan sát và nói trước khi bấm" },
-    { icon: "cursor", title: "Chọn thao tác", note: "Xác nhận tên nút và menu" },
-    { icon: "pencil-square", title: "Ghi kết quả", note: "Ghi kết quả và câu hỏi" },
-    { icon: "question-circle", title: "Đặt câu hỏi", note: "Không chắc thì dừng và hỏi" }
-  ]
-};
+<p class="caption">Hình ${Number(item.id)}-2. Sơ đồ học cho ${title}, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+
+Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.`;
+}
 
 function cover(locale, item) {
   const title = locale.lang === "ko" ? item.ko : item.vi;
@@ -215,7 +154,7 @@ function koBody(item, index) {
 
 ${title}에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.
 
-${visualStrip(koVisuals.safety)}
+이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.
 
 | 위험 상황 | 발생 원인 | 예방 행동 |
 | --- | --- | --- |
@@ -236,11 +175,13 @@ ${visualStrip(koVisuals.safety)}
 
 이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.
 
+${koStudyFigure(item, title)}
+
 ## ${ko.labels.concept}
 
 ${title}의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.
 
-${visualStrip(koVisuals.concept)}
+위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.
 
 | 핵심 용어 | 의미 | 현장 확인 |
 | --- | --- | --- |
@@ -255,7 +196,7 @@ ${visualStrip(koVisuals.concept)}
 
 다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.
 
-${visualStrip(koVisuals.procedure)}
+절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.
 
 1. 작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.
 2. CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.
@@ -274,7 +215,7 @@ ${visualStrip(koVisuals.procedure)}
 
 ## ${ko.labels.checklist}
 
-${visualStrip(koVisuals.checklist)}
+체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.
 
 | 점검 항목 | 정상 기준 | 이상 시 조치 |
 | --- | --- | --- |
@@ -290,7 +231,7 @@ ${visualStrip(koVisuals.checklist)}
 
 ## ${ko.labels.practice}
 
-${visualStrip(koVisuals.practice)}
+실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.
 
 ### 실습 A: 상태 읽기
 
@@ -396,7 +337,7 @@ Mục này giúp học viên mới hiểu và giải thích an toàn nội dung 
 
 Thời điểm nguy hiểm nhất trong ${title} là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.
 
-${visualStrip(viVisuals.safety)}
+Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.
 
 | Tình huống nguy hiểm | Nguyên nhân | Cách phòng tránh |
 | --- | --- | --- |
@@ -417,11 +358,13 @@ ${visualStrip(viVisuals.safety)}
 
 Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.
 
+${viStudyFigure(item, title)}
+
 ## ${vi.labels.concept}
 
 Điểm cốt lõi của ${title} không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.
 
-${visualStrip(viVisuals.concept)}
+Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.
 
 | Thuật ngữ | Ý nghĩa | Kiểm tra tại hiện trường |
 | --- | --- | --- |
@@ -436,7 +379,7 @@ ${visualStrip(viVisuals.concept)}
 
 Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.
 
-${visualStrip(viVisuals.procedure)}
+Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.
 
 1. Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.
 2. Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.
@@ -455,7 +398,7 @@ Thực hành: Tại vị trí đào tạo do giảng viên chỉ định, học 
 
 ## ${vi.labels.checklist}
 
-${visualStrip(viVisuals.checklist)}
+Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.
 
 | Hạng mục kiểm tra | Tiêu chuẩn bình thường | Xử lý khi bất thường |
 | --- | --- | --- |
@@ -471,7 +414,7 @@ Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm 
 
 ## ${vi.labels.practice}
 
-${visualStrip(viVisuals.practice)}
+Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.
 
 ### Thực hành A: Đọc trạng thái
 

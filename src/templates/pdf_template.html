@@ -286,51 +286,8 @@
       font-size: 9pt;
     }
 
-    .visual-strip {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4mm;
-      margin: 5mm 0 6mm;
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-
-    .visual-card {
-      min-height: 50mm;
-      padding: 4mm;
-      border: 0.25mm solid var(--line);
-      background: #fbfcfe;
-      text-align: center;
-    }
-
-    .visual-card img {
-      width: 24mm;
-      height: 24mm;
-      max-height: 24mm;
-      margin: 0 auto 3mm;
-      border: 0;
-      opacity: 0.9;
-    }
-
-    .visual-card strong {
-      display: block;
-      color: var(--accent-dark);
-      font-size: 11pt;
-      line-height: 1.25;
-    }
-
-    .visual-card span {
-      display: block;
-      margin-top: 1.8mm;
-      color: var(--muted);
-      font-size: 9.2pt;
-      line-height: 1.38;
-    }
-
-    @media screen {
-      .visual-strip {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
+    p img[src*="/diagrams/training/"] {
+      max-height: 132mm;
     }
   </style>
 </head>

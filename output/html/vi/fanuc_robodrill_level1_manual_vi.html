@@ -293,51 +293,8 @@
       font-size: 9pt;
     }
 
-    .visual-strip {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4mm;
-      margin: 5mm 0 6mm;
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-
-    .visual-card {
-      min-height: 50mm;
-      padding: 4mm;
-      border: 0.25mm solid var(--line);
-      background: #fbfcfe;
-      text-align: center;
-    }
-
-    .visual-card img {
-      width: 24mm;
-      height: 24mm;
-      max-height: 24mm;
-      margin: 0 auto 3mm;
-      border: 0;
-      opacity: 0.9;
-    }
-
-    .visual-card strong {
-      display: block;
-      color: var(--accent-dark);
-      font-size: 11pt;
-      line-height: 1.25;
-    }
-
-    .visual-card span {
-      display: block;
-      margin-top: 1.8mm;
-      color: var(--muted);
-      font-size: 9.2pt;
-      line-height: 1.38;
-    }
-
-    @media screen {
-      .visual-strip {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
+    p img[src*="/diagrams/training/"] {
+      max-height: 132mm;
     }
   </style>
 </head>
@@ -380,28 +337,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Cấu trúc ROBODRILL là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -416,30 +352,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="Hình tham khảo Cấu trúc ROBODRILL"></p>
 <p class="caption">Hình 1-1. Hình tham khảo cho bài Cấu trúc ROBODRILL. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item01_study.svg" alt="Sơ đồ học chức năng Cấu trúc ROBODRILL"></p>
+<p class="caption">Hình 1-2. Sơ đồ học cho Cấu trúc ROBODRILL, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Cấu trúc ROBODRILL không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -451,28 +369,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -488,28 +385,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -522,28 +398,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -640,28 +495,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Bật và tắt nguồn là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -676,30 +510,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_panel.webp" alt="Hình tham khảo Bật và tắt nguồn"></p>
 <p class="caption">Hình 2-1. Hình tham khảo cho bài Bật và tắt nguồn. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item02_study.svg" alt="Sơ đồ học chức năng Bật và tắt nguồn"></p>
+<p class="caption">Hình 2-2. Sơ đồ học cho Bật và tắt nguồn, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Bật và tắt nguồn không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -711,28 +527,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -748,28 +543,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -782,28 +556,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -900,28 +653,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Về điểm gốc máy là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -936,30 +668,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training_flow.svg" alt="Hình tham khảo Về điểm gốc máy"></p>
 <p class="caption">Hình 3-1. Hình tham khảo cho bài Về điểm gốc máy. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item03_study.svg" alt="Sơ đồ học chức năng Về điểm gốc máy"></p>
+<p class="caption">Hình 3-2. Sơ đồ học cho Về điểm gốc máy, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Về điểm gốc máy không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -971,28 +685,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -1008,28 +701,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -1042,28 +714,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -1160,28 +811,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Di chuyển JOG là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -1196,30 +826,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/axis_coordinate.svg" alt="Hình tham khảo Di chuyển JOG"></p>
 <p class="caption">Hình 4-1. Hình tham khảo cho bài Di chuyển JOG. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item04_study.svg" alt="Sơ đồ học chức năng Di chuyển JOG"></p>
+<p class="caption">Hình 4-2. Sơ đồ học cho Di chuyển JOG, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Di chuyển JOG không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -1231,28 +843,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -1268,28 +859,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -1302,28 +872,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -1420,28 +969,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Di chuyển bằng tay quay HANDLE là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -1456,30 +984,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/axis_coordinate.svg" alt="Hình tham khảo Di chuyển bằng tay quay HANDLE"></p>
 <p class="caption">Hình 5-1. Hình tham khảo cho bài Di chuyển bằng tay quay HANDLE. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item05_study.svg" alt="Sơ đồ học chức năng Di chuyển bằng tay quay HANDLE"></p>
+<p class="caption">Hình 5-2. Sơ đồ học cho Di chuyển bằng tay quay HANDLE, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Di chuyển bằng tay quay HANDLE không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -1491,28 +1001,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -1528,28 +1017,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -1562,28 +1030,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -1680,28 +1127,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Hiểu hệ tọa độ là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -1716,30 +1142,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/axis_coordinate.svg" alt="Hình tham khảo Hiểu hệ tọa độ"></p>
 <p class="caption">Hình 6-1. Hình tham khảo cho bài Hiểu hệ tọa độ. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item06_study.svg" alt="Sơ đồ học chức năng Hiểu hệ tọa độ"></p>
+<p class="caption">Hình 6-2. Sơ đồ học cho Hiểu hệ tọa độ, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Hiểu hệ tọa độ không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -1751,28 +1159,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -1788,28 +1175,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -1822,28 +1188,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -1940,28 +1285,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Cách dùng MDI là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -1976,30 +1300,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_panel.webp" alt="Hình tham khảo Cách dùng MDI"></p>
 <p class="caption">Hình 7-1. Hình tham khảo cho bài Cách dùng MDI. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item07_study.svg" alt="Sơ đồ học chức năng Cách dùng MDI"></p>
+<p class="caption">Hình 7-2. Sơ đồ học cho Cách dùng MDI, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Cách dùng MDI không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -2011,28 +1317,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -2048,28 +1333,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -2082,28 +1346,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -2200,28 +1443,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Gọi chương trình là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -2236,30 +1458,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_panel.webp" alt="Hình tham khảo Gọi chương trình"></p>
 <p class="caption">Hình 8-1. Hình tham khảo cho bài Gọi chương trình. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item08_study.svg" alt="Sơ đồ học chức năng Gọi chương trình"></p>
+<p class="caption">Hình 8-2. Sơ đồ học cho Gọi chương trình, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Gọi chương trình không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -2271,28 +1475,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -2308,28 +1491,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -2342,28 +1504,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -2460,28 +1601,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Thay dao là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -2496,30 +1616,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_tool_changer.webp" alt="Hình tham khảo Thay dao"></p>
 <p class="caption">Hình 9-1. Hình tham khảo cho bài Thay dao. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item09_study.svg" alt="Sơ đồ học chức năng Thay dao"></p>
+<p class="caption">Hình 9-2. Sơ đồ học cho Thay dao, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Thay dao không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -2531,28 +1633,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -2568,28 +1649,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -2602,28 +1662,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -2720,28 +1759,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Bù dao Tool Offset là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -2756,30 +1774,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_tool_changer.webp" alt="Hình tham khảo Bù dao Tool Offset"></p>
 <p class="caption">Hình 10-1. Hình tham khảo cho bài Bù dao Tool Offset. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item10_study.svg" alt="Sơ đồ học chức năng Bù dao Tool Offset"></p>
+<p class="caption">Hình 10-2. Sơ đồ học cho Bù dao Tool Offset, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Bù dao Tool Offset không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -2791,28 +1791,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -2828,28 +1807,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -2862,28 +1820,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -2980,28 +1917,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Bù gốc Work Offset là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -3016,30 +1932,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/axis_coordinate.svg" alt="Hình tham khảo Bù gốc Work Offset"></p>
 <p class="caption">Hình 11-1. Hình tham khảo cho bài Bù gốc Work Offset. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item11_study.svg" alt="Sơ đồ học chức năng Bù gốc Work Offset"></p>
+<p class="caption">Hình 11-2. Sơ đồ học cho Bù gốc Work Offset, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Bù gốc Work Offset không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -3051,28 +1949,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -3088,28 +1965,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -3122,28 +1978,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -3240,28 +2075,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Cấu trúc chương trình cơ bản là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -3276,30 +2090,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training_flow.svg" alt="Hình tham khảo Cấu trúc chương trình cơ bản"></p>
 <p class="caption">Hình 12-1. Hình tham khảo cho bài Cấu trúc chương trình cơ bản. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item12_study.svg" alt="Sơ đồ học chức năng Cấu trúc chương trình cơ bản"></p>
+<p class="caption">Hình 12-2. Sơ đồ học cho Cấu trúc chương trình cơ bản, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Cấu trúc chương trình cơ bản không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -3311,28 +2107,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -3348,28 +2123,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -3382,28 +2136,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -3500,28 +2233,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Dry run và Single Block là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -3536,30 +2248,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training_flow.svg" alt="Hình tham khảo Dry run và Single Block"></p>
 <p class="caption">Hình 13-1. Hình tham khảo cho bài Dry run và Single Block. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item13_study.svg" alt="Sơ đồ học chức năng Dry run và Single Block"></p>
+<p class="caption">Hình 13-2. Sơ đồ học cho Dry run và Single Block, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Dry run và Single Block không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -3571,28 +2265,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -3608,28 +2281,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -3642,28 +2294,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -3760,28 +2391,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Quản lý dung dịch cắt và phoi là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -3796,30 +2406,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="Hình tham khảo Quản lý dung dịch cắt và phoi"></p>
 <p class="caption">Hình 14-1. Hình tham khảo cho bài Quản lý dung dịch cắt và phoi. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item14_study.svg" alt="Sơ đồ học chức năng Quản lý dung dịch cắt và phoi"></p>
+<p class="caption">Hình 14-2. Sơ đồ học cho Quản lý dung dịch cắt và phoi, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Quản lý dung dịch cắt và phoi không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -3831,28 +2423,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -3868,28 +2439,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -3902,28 +2452,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -4020,28 +2549,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Kẹp phôi và ê tô là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -4056,30 +2564,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="Hình tham khảo Kẹp phôi và ê tô"></p>
 <p class="caption">Hình 15-1. Hình tham khảo cho bài Kẹp phôi và ê tô. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item15_study.svg" alt="Sơ đồ học chức năng Kẹp phôi và ê tô"></p>
+<p class="caption">Hình 15-2. Sơ đồ học cho Kẹp phôi và ê tô, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Kẹp phôi và ê tô không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -4091,28 +2581,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -4128,28 +2597,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -4162,28 +2610,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -4280,28 +2707,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Kiểm tra tình trạng dao là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -4316,30 +2722,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_tool_changer.webp" alt="Hình tham khảo Kiểm tra tình trạng dao"></p>
 <p class="caption">Hình 16-1. Hình tham khảo cho bài Kiểm tra tình trạng dao. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item16_study.svg" alt="Sơ đồ học chức năng Kiểm tra tình trạng dao"></p>
+<p class="caption">Hình 16-2. Sơ đồ học cho Kiểm tra tình trạng dao, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Kiểm tra tình trạng dao không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -4351,28 +2739,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -4388,28 +2755,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -4422,28 +2768,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -4540,28 +2865,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Kiểm tra alarm và xử lý cơ bản là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -4576,30 +2880,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_official_panel.webp" alt="Hình tham khảo Kiểm tra alarm và xử lý cơ bản"></p>
 <p class="caption">Hình 17-1. Hình tham khảo cho bài Kiểm tra alarm và xử lý cơ bản. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item17_study.svg" alt="Sơ đồ học chức năng Kiểm tra alarm và xử lý cơ bản"></p>
+<p class="caption">Hình 17-2. Sơ đồ học cho Kiểm tra alarm và xử lý cơ bản, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Kiểm tra alarm và xử lý cơ bản không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -4611,28 +2897,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -4648,28 +2913,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -4682,28 +2926,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -4800,28 +3023,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Cơ bản kiểm tra chất lượng là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -4836,30 +3038,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="Hình tham khảo Cơ bản kiểm tra chất lượng"></p>
 <p class="caption">Hình 18-1. Hình tham khảo cho bài Cơ bản kiểm tra chất lượng. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item18_study.svg" alt="Sơ đồ học chức năng Cơ bản kiểm tra chất lượng"></p>
+<p class="caption">Hình 18-2. Sơ đồ học cho Cơ bản kiểm tra chất lượng, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Cơ bản kiểm tra chất lượng không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -4871,28 +3055,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -4908,28 +3071,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -4942,28 +3084,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -5060,28 +3181,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Ghi phiếu công việc là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -5096,30 +3196,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training_flow.svg" alt="Hình tham khảo Ghi phiếu công việc"></p>
 <p class="caption">Hình 19-1. Hình tham khảo cho bài Ghi phiếu công việc. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item19_study.svg" alt="Sơ đồ học chức năng Ghi phiếu công việc"></p>
+<p class="caption">Hình 19-2. Sơ đồ học cho Ghi phiếu công việc, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Ghi phiếu công việc không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -5131,28 +3213,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -5168,28 +3229,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -5202,28 +3242,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
@@ -5320,28 +3339,7 @@
 <div class="page-break"></div>
 <h2>An toàn</h2>
 <p>Thời điểm nguy hiểm nhất trong Thực hành gia công đầu tiên là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/shield-exclamation.svg" alt="Nhận biết rủi ro">
-<strong>Nhận biết rủi ro</strong>
-<span>Tìm bộ phận có thể chuyển động trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Quan sát trạng thái">
-<strong>Quan sát trạng thái</strong>
-<span>Nhìn cả màn hình và vị trí thật</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/stop-circle.svg" alt="Dừng ngay">
-<strong>Dừng ngay</strong>
-<span>Nếu khác dự đoán thì dừng trước</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Báo cáo">
-<strong>Báo cáo</strong>
-<span>Ghi alarm và điều kiện phát sinh</span>
-</div>
-</div>
+<p>Trước khi thao tác, học viên đọc sơ đồ học của bài này và liên hệ giữa trạng thái trên màn hình với bộ phận có thể chuyển động trên máy thật. Nếu chưa giải thích được sơ đồ, không bắt đầu thao tác.</p>
 <table>
 <thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
 <tbody>
@@ -5356,30 +3354,12 @@
 <p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="Hình tham khảo Thực hành gia công đầu tiên"></p>
 <p class="caption">Hình 20-1. Hình tham khảo cho bài Thực hành gia công đầu tiên. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
 <p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/diagrams/training/level1_item20_study.svg" alt="Sơ đồ học chức năng Thực hành gia công đầu tiên"></p>
+<p class="caption">Hình 20-2. Sơ đồ học cho Thực hành gia công đầu tiên, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p>Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.</p>
 <h2>Khái niệm cốt lõi</h2>
 <p>Điểm cốt lõi của Thực hành gia công đầu tiên không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/diagram-3.svg" alt="Hiểu liên hệ">
-<strong>Hiểu liên hệ</strong>
-<span>Nối nút, màn hình và chuyển động máy</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/crosshair.svg" alt="Xác nhận chuẩn">
-<strong>Xác nhận chuẩn</strong>
-<span>Phân biệt tọa độ và mặt chuẩn</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/tools.svg" alt="Tình trạng dao">
-<strong>Tình trạng dao</strong>
-<span>Kiểm tra dao và holder</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/bullseye.svg" alt="Vị trí mục tiêu">
-<strong>Vị trí mục tiêu</strong>
-<span>Tách vị trí cần đến và vùng nguy hiểm</span>
-</div>
-</div>
+<p>Học viên chỉ vào sơ đồ chức năng để giải thích ví dụ màn hình, hướng chuyển động và thứ tự học. Các số, mode hoặc tên nút trên sơ đồ phải được kiểm tra lại trên màn hình máy thật.</p>
 <table>
 <thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
 <tbody>
@@ -5391,28 +3371,7 @@
 <div class="page-break"></div>
 <h2>Quy trình từng bước</h2>
 <p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/list-check.svg" alt="Xác nhận thứ tự">
-<strong>Xác nhận thứ tự</strong>
-<span>Nói quy trình trước khi thao tác</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/speedometer2.svg" alt="Giới hạn tốc độ">
-<strong>Giới hạn tốc độ</strong>
-<span>Bắt đầu với override thấp</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/arrows-move.svg" alt="Di chuyển ngắn">
-<strong>Di chuyển ngắn</strong>
-<span>Chạy một bước rồi dừng quan sát</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/check2-square.svg" alt="Bước tiếp theo">
-<strong>Bước tiếp theo</strong>
-<span>Chỉ tiếp tục khi trạng thái bình thường</span>
-</div>
-</div>
+<p>Trước khi bắt đầu quy trình, học viên đọc thứ tự trên sơ đồ và tìm cùng tên nút hoặc hiển thị trên bảng điều khiển thật. Nếu tên hoặc trạng thái màn hình khác, phải hỏi giảng viên trước.</p>
 <ol>
 <li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
 <li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
@@ -5428,28 +3387,7 @@
 </div>
 <div class="page-break"></div>
 <h2>Checklist tại hiện trường</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/clipboard-check.svg" alt="Checklist">
-<strong>Checklist</strong>
-<span>Kiểm tra không bỏ sót</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/exclamation-triangle.svg" alt="Dấu hiệu bất thường">
-<strong>Dấu hiệu bất thường</strong>
-<span>Đọc alarm và thông báo</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/gear.svg" alt="Điều kiện máy">
-<strong>Điều kiện máy</strong>
-<span>Xem cửa, Servo và override</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/journal-check.svg" alt="Phiếu ghi">
-<strong>Phiếu ghi</strong>
-<span>Ghi đủ để người khác hiểu lại</span>
-</div>
-</div>
+<p>Checklist là quá trình đối chiếu lại màn hình, cơ cấu và hướng chuyển động trong sơ đồ với máy thật. Dù checklist đã xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <table>
 <thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
 <tbody>
@@ -5462,28 +3400,7 @@
 <p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
 <div class="page-break"></div>
 <h2>Thực hành</h2>
-<div class="visual-strip">
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/eye.svg" alt="Đọc và báo cáo">
-<strong>Đọc và báo cáo</strong>
-<span>Quan sát và nói trước khi bấm</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/cursor.svg" alt="Chọn thao tác">
-<strong>Chọn thao tác</strong>
-<span>Xác nhận tên nút và menu</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/pencil-square.svg" alt="Ghi kết quả">
-<strong>Ghi kết quả</strong>
-<span>Ghi kết quả và câu hỏi</span>
-</div>
-<div class="visual-card">
-<img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/icons/bootstrap/question-circle.svg" alt="Đặt câu hỏi">
-<strong>Đặt câu hỏi</strong>
-<span>Không chắc thì dừng và hỏi</span>
-</div>
-</div>
+<p>Phần thực hành tách thành hai bước: giải thích theo sơ đồ trước, sau đó thao tác từng bước trên máy thật. Học viên chỉ thao tác sau khi giảng viên xác nhận phần giải thích.</p>
 <h3>Thực hành A: Đọc trạng thái</h3>
 <ol>
 <li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>

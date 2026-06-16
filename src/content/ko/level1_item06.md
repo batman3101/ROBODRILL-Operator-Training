@@ -40,28 +40,7 @@
 
 좌표계 이해에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
-<strong>위험 인지</strong>
-<span>움직일 수 있는 부위를 먼저 찾는다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/eye.svg" alt="상태 관찰">
-<strong>상태 관찰</strong>
-<span>화면과 실제 위치를 함께 본다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
-<strong>즉시 정지</strong>
-<span>예상과 다르면 먼저 멈춘다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
-<strong>보고 기록</strong>
-<span>알람과 조건을 남긴다</span>
-</div>
-</div>
+이 항목의 학습 도해를 먼저 읽고, 화면에서 어떤 상태를 확인해야 하는지와 실제 장비에서 어느 부분이 움직일 수 있는지를 연결해 설명한다. 그림을 읽지 못하면 조작을 시작하지 않는다.
 
 | 위험 상황 | 발생 원인 | 예방 행동 |
 | --- | --- | --- |
@@ -82,32 +61,17 @@
 
 이미지를 볼 때는 장비 전체를 한 번에 보려 하지 말고 작업자에게 영향을 주는 위치부터 확인한다. 첫째, 손과 몸이 들어갈 수 있는 위험 구간을 찾는다. 둘째, 버튼 또는 화면 조작이 어떤 장치의 움직임으로 이어지는지 연결한다. 셋째, 이상이 생겼을 때 즉시 멈출 수 있는 위치를 확인한다.
 
+![좌표계 이해 기능 학습 도해](../../assets/diagrams/training/level1_item06_study.svg)
+
+<p class="caption">그림 6-2. 좌표계 이해의 CNC 화면 예시, 조작 순서, 실제 움직임을 함께 보는 학습용 도해.</p>
+
+도해는 장식용 그림이 아니라 실습 전에 읽어야 하는 작업 지도이다. 왼쪽의 CNC 화면 예시에서 모드, 선택된 축, 프로그램 번호, 오프셋 값 같은 문자를 먼저 읽고, 오른쪽의 동작 그림에서 실제로 움직일 장치와 방향을 확인한다. 아래 학습 순서는 지도자에게 말로 보고한 뒤 한 단계씩 수행한다.
+
 ## 핵심 개념
 
 좌표계 이해의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
-<strong>관계 이해</strong>
-<span>버튼, 화면, 장치 움직임을 연결한다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
-<strong>기준 확인</strong>
-<span>좌표와 기준면을 구분한다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/tools.svg" alt="공구 상태">
-<strong>공구 상태</strong>
-<span>공구와 홀더 상태를 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
-<strong>목표 위치</strong>
-<span>가야 할 위치와 위험 위치를 나눈다</span>
-</div>
-</div>
+위 기능 도해에서 화면 예시, 움직임 방향, 학습 순서를 각각 손으로 짚으며 설명한다. 특히 숫자나 모드 표시는 실제 장비 화면의 같은 위치에서 다시 확인해야 한다.
 
 | 핵심 용어 | 의미 | 현장 확인 |
 | --- | --- | --- |
@@ -122,28 +86,7 @@
 
 다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/list-check.svg" alt="순서 확인">
-<strong>순서 확인</strong>
-<span>작업 전 흐름을 말로 설명한다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
-<strong>속도 제한</strong>
-<span>첫 동작은 낮은 오버라이드로 시작한다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
-<strong>짧은 이동</strong>
-<span>한 번 움직이고 멈춰서 본다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
-<strong>다음 단계</strong>
-<span>정상일 때만 다음으로 간다</span>
-</div>
-</div>
+절차를 시작하기 전에는 기능 도해의 순서를 한 번 읽고, 실제 패널이나 화면에서 같은 이름의 버튼과 표시를 찾는다. 이름이 다르거나 화면 상태가 다르면 지도자에게 먼저 확인한다.
 
 1. 작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.
 2. CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.
@@ -162,28 +105,7 @@
 
 ## 현장 체크리스트
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
-<strong>점검표</strong>
-<span>누락 없이 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
-<strong>이상 표시</strong>
-<span>알람과 메시지를 읽는다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/gear.svg" alt="기계 조건">
-<strong>기계 조건</strong>
-<span>도어, Servo, 오버라이드를 본다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
-<strong>작업 기록</strong>
-<span>누가 봐도 재현 가능하게 적는다</span>
-</div>
-</div>
+체크리스트는 기능 도해의 화면, 장치, 이동 방향을 실제 장비에서 다시 확인하는 과정이다. 체크가 끝난 뒤에도 실제 움직임이 예상과 다르면 즉시 정지한다.
 
 | 점검 항목 | 정상 기준 | 이상 시 조치 |
 | --- | --- | --- |
@@ -199,28 +121,7 @@
 
 ## 실습
 
-<div class="visual-strip">
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/eye.svg" alt="보고 읽기">
-<strong>보고 읽기</strong>
-<span>먼저 보고 말한 뒤 조작한다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/cursor.svg" alt="조작 선택">
-<strong>조작 선택</strong>
-<span>버튼과 메뉴 이름을 확인한다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
-<strong>결과 작성</strong>
-<span>실습 결과와 질문을 적는다</span>
-</div>
-<div class="visual-card">
-<img src="../../assets/icons/bootstrap/question-circle.svg" alt="질문">
-<strong>질문</strong>
-<span>불확실하면 멈추고 묻는다</span>
-</div>
-</div>
+실습은 도해를 보고 설명하는 단계와 실제 장비에서 한 단계씩 조작하는 단계를 분리한다. 학습자는 먼저 그림을 보며 순서를 말하고, 지도자가 확인한 뒤에만 조작한다.
 
 ### 실습 A: 상태 읽기
 
