@@ -159,6 +159,43 @@ function text(x, y, value, size = 22, weight = 600, fill = "#163247") {
   return `<text x="${x}" y="${y}" font-size="${size}" font-weight="${weight}" fill="${fill}">${esc(value)}</text>`;
 }
 
+function estimateWidth(value, size) {
+  return Array.from(String(value)).reduce((width, ch) => {
+    const code = ch.codePointAt(0);
+    if (/\s/.test(ch)) return width + size * 0.32;
+    if (code >= 0xac00 && code <= 0xd7a3) return width + size * 0.92;
+    if (code > 127) return width + size * 0.74;
+    if (/[A-Z0-9]/.test(ch)) return width + size * 0.62;
+    return width + size * 0.5;
+  }, 0);
+}
+
+function wrapText(value, size, maxWidth) {
+  const words = String(value).replaceAll("->", " -> ").replace(/\s+/g, " ").trim().split(" ");
+  const lines = [];
+  let current = "";
+
+  for (const word of words) {
+    const next = current ? `${current} ${word}` : word;
+    if (estimateWidth(next, size) <= maxWidth || !current) {
+      current = next;
+    } else {
+      lines.push(current);
+      current = word;
+    }
+  }
+
+  if (current) lines.push(current);
+  return lines.length > 0 ? lines : [""];
+}
+
+function textBlock(x, y, value, maxWidth, size = 18, weight = 700, fill = "#163247", lineHeight = 19) {
+  const lines = wrapText(value, size, maxWidth);
+  return `<text x="${x}" y="${y}" font-size="${size}" font-weight="${weight}" fill="${fill}">
+${lines.map((line, index) => `<tspan x="${x}" dy="${index === 0 ? 0 : lineHeight}">${esc(line)}</tspan>`).join("\n")}
+</text>`;
+}
+
 function screen(lines) {
   const rows = lines.map((line, index) => {
     const y = 172 + index * 42;
@@ -182,10 +219,10 @@ function stepsBlock(steps) {
   return steps.map((step, index) => {
     const x = index % 2 === 0 ? 54 : 470;
     const y = 522 + Math.floor(index / 2) * 68;
-    return `<rect x="${x}" y="${y}" width="376" height="48" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
+    return `<rect x="${x}" y="${y}" width="376" height="52" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
 <circle cx="${x + 28}" cy="${y + 24}" r="15" fill="#176f8f"/>
 ${text(x + 23, y + 31, index + 1, 18, 800, "#ffffff")}
-${text(x + 56, y + 31, step, 18, 700, "#163247")}`;
+${textBlock(x + 56, y + 25, step, 292, 16, 700, "#163247", 17)}`;
   }).join("\n");
 }
 
@@ -196,29 +233,29 @@ ${text(0, 10, "동작/구조 설명", 20, 800, "#0d4e67")}
   const end = "</g>";
 
   const arrows = {
-    x: `<line x1="82" y1="178" x2="260" y2="178" stroke="#d64242" stroke-width="8" marker-end="url(#arrow-red)"/><line x1="260" y1="210" x2="82" y2="210" stroke="#d64242" stroke-width="8" marker-end="url(#arrow-red)"/>${text(132, 164, "X축 + / -", 22, 800, "#9b2525")}`,
-    y: `<line x1="176" y1="228" x2="176" y2="92" stroke="#176f8f" stroke-width="8" marker-end="url(#arrow-blue)"/><line x1="214" y1="92" x2="214" y2="228" stroke="#176f8f" stroke-width="8" marker-end="url(#arrow-blue)"/>${text(222, 156, "Y축", 22, 800, "#0d4e67")}`,
-    z: `<line x1="78" y1="235" x2="78" y2="82" stroke="#25a55f" stroke-width="8" marker-end="url(#arrow-green)"/>${text(92, 104, "Z축 UP", 20, 800, "#17613c")}`
+    x: `<line x1="96" y1="190" x2="248" y2="190" stroke="#d64242" stroke-width="5" marker-end="url(#arrow-red)"/><line x1="248" y1="214" x2="96" y2="214" stroke="#d64242" stroke-width="5" marker-end="url(#arrow-red)"/>${text(126, 178, "X축 + / -", 18, 800, "#9b2525")}`,
+    y: `<line x1="284" y1="220" x2="284" y2="102" stroke="#176f8f" stroke-width="5" marker-end="url(#arrow-blue)"/><line x1="306" y1="102" x2="306" y2="220" stroke="#176f8f" stroke-width="5" marker-end="url(#arrow-blue)"/>${text(256, 94, "Y축", 18, 800, "#0d4e67")}`,
+    z: `<line x1="74" y1="232" x2="74" y2="96" stroke="#25a55f" stroke-width="5" marker-end="url(#arrow-green)"/>${text(88, 112, "Z축 UP", 17, 800, "#17613c")}`
   };
 
   if (kind === "axis" || kind === "home" || kind === "coordinate") {
     return `${base}
-<rect x="120" y="120" width="120" height="92" fill="#f2c14e" stroke="#7a5a0a" stroke-width="4"/>
-<rect x="146" y="74" width="70" height="54" fill="#cbd5e1" stroke="#64748b"/>
+<rect x="126" y="128" width="104" height="78" fill="#f2c14e" stroke="#7a5a0a" stroke-width="4"/>
+<rect x="152" y="82" width="54" height="50" fill="#cbd5e1" stroke="#64748b" stroke-width="3"/>
 ${arrows.x}${arrows.y}${kind === "home" ? arrows.z : ""}
-${text(118, 258, kind === "coordinate" ? "G54 소재 원점" : "축 방향을 말로 확인", 19, 800, "#163247")}
-${kind === "coordinate" ? `<circle cx="120" cy="212" r="9" fill="#111827"/>${text(134, 218, "X0 Y0", 18, 800, "#111827")}` : ""}
+${textBlock(88, 262, kind === "coordinate" ? "G54 소재 원점" : "축 방향을 말로 확인", 214, 17, 800, "#163247", 18)}
+${kind === "coordinate" ? `<circle cx="126" cy="206" r="8" fill="#111827"/>${text(140, 212, "X0 Y0", 16, 800, "#111827")}` : ""}
 ${end}`;
   }
 
   if (kind === "handle") {
     return `${base}
-<circle cx="174" cy="160" r="72" fill="#e2e8f0" stroke="#475569" stroke-width="5"/>
-<circle cx="174" cy="160" r="18" fill="#ffffff" stroke="#475569" stroke-width="4"/>
-<path d="M174 80 A80 80 0 0 1 252 160" fill="none" stroke="#25a55f" stroke-width="9" marker-end="url(#arrow-green)"/>
-<path d="M174 240 A80 80 0 0 1 96 160" fill="none" stroke="#d64242" stroke-width="9" marker-end="url(#arrow-red)"/>
-${text(232, 112, "+ 방향", 20, 800, "#17613c")}
-${text(42, 226, "- 방향", 20, 800, "#9b2525")}
+<circle cx="174" cy="158" r="62" fill="#e2e8f0" stroke="#475569" stroke-width="4"/>
+<circle cx="174" cy="158" r="16" fill="#ffffff" stroke="#475569" stroke-width="3"/>
+<path d="M174 88 A70 70 0 0 1 242 158" fill="none" stroke="#25a55f" stroke-width="6" marker-end="url(#arrow-green)"/>
+<path d="M174 228 A70 70 0 0 1 106 158" fill="none" stroke="#d64242" stroke-width="6" marker-end="url(#arrow-red)"/>
+${text(230, 118, "+ 방향", 18, 800, "#17613c")}
+${text(54, 220, "- 방향", 18, 800, "#9b2525")}
 <rect x="42" y="260" width="80" height="30" rx="6" fill="#fff3d8" stroke="#d6901f"/>${text(58, 282, "x1", 18, 800)}
 <rect x="134" y="260" width="80" height="30" rx="6" fill="#fff3d8" stroke="#d6901f"/>${text(146, 282, "x10", 18, 800)}
 <rect x="226" y="260" width="80" height="30" rx="6" fill="#fff3d8" stroke="#d6901f"/>${text(235, 282, "x100", 18, 800)}
@@ -247,7 +284,23 @@ ${text(56, 234, kind === "tooloffset" ? "H값 / Wear 값 확인" : kind === "wor
 ${end}`;
   }
 
-  if (["coolant", "vise", "quality", "record", "firstcut", "power", "structure", "alarm"].includes(kind)) {
+  if (kind === "power") {
+    return `${base}
+<rect x="46" y="102" width="76" height="48" rx="8" fill="#eef3f8" stroke="#8da0b6" stroke-width="3"/>
+${text(64, 132, "Power", 16, 800, "#0d4e67")}
+<line x1="128" y1="126" x2="170" y2="126" stroke="#176f8f" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<rect x="176" y="102" width="76" height="48" rx="8" fill="#eef8f3" stroke="#9bc7af" stroke-width="3"/>
+${text(194, 132, "Servo", 16, 800, "#17613c")}
+<line x1="258" y1="126" x2="300" y2="126" stroke="#176f8f" stroke-width="5" marker-end="url(#arrow-blue)"/>
+<rect x="306" y="102" width="36" height="48" rx="8" fill="#fff3d8" stroke="#d6901f" stroke-width="3"/>
+${text(312, 132, "ZRN", 14, 800, "#9b2525")}
+<rect x="72" y="190" width="202" height="54" rx="8" fill="#e2e8f0" stroke="#64748b" stroke-width="4"/>
+<rect x="116" y="212" width="114" height="42" fill="#f2c14e" stroke="#7a5a0a" stroke-width="4"/>
+${textBlock(54, 282, "전원 ON 후 Servo ON과 Home Return 요구를 순서대로 확인", 284, 17, 800, "#163247", 18)}
+${end}`;
+  }
+
+  if (["coolant", "vise", "quality", "record", "firstcut", "structure", "alarm"].includes(kind)) {
     const label = {
       coolant: "노즐은 공구 끝을 향하게",
       vise: "기준면 밀착 / 바이스 체결",
@@ -261,12 +314,11 @@ ${end}`;
     return `${base}
 <rect x="72" y="94" width="202" height="138" rx="8" fill="#e2e8f0" stroke="#64748b" stroke-width="4"/>
 <rect x="116" y="132" width="114" height="74" fill="#f2c14e" stroke="#7a5a0a" stroke-width="4"/>
-${kind === "coolant" ? `<path d="M58 92 C100 100 126 118 154 150" fill="none" stroke="#176f8f" stroke-width="8" marker-end="url(#arrow-blue)"/>` : ""}
+${kind === "coolant" ? `<path d="M62 96 C100 104 126 120 150 150" fill="none" stroke="#176f8f" stroke-width="6" marker-end="url(#arrow-blue)"/>` : ""}
 ${kind === "alarm" ? `<rect x="52" y="78" width="246" height="68" rx="8" fill="#fff3d8" stroke="#d6901f" stroke-width="4"/>${text(78, 122, "ALARM 1004", 24, 800, "#9b2525")}` : ""}
-${kind === "vise" ? `<rect x="52" y="218" width="246" height="28" fill="#475569"/><line x1="66" y1="96" x2="116" y2="132" stroke="#d64242" stroke-width="7" marker-end="url(#arrow-red)"/>` : ""}
+${kind === "vise" ? `<rect x="52" y="218" width="246" height="28" fill="#475569"/><line x1="70" y1="100" x2="114" y2="130" stroke="#d64242" stroke-width="5" marker-end="url(#arrow-red)"/>` : ""}
 ${kind === "quality" ? `<line x1="52" y1="92" x2="280" y2="232" stroke="#475569" stroke-width="6"/><line x1="280" y1="92" x2="52" y2="232" stroke="#475569" stroke-width="6"/>` : ""}
-${kind === "power" ? `<line x1="42" y1="270" x2="300" y2="270" stroke="#176f8f" stroke-width="7" marker-end="url(#arrow-blue)"/>${text(56, 292, "Power -> Servo -> Home", 18, 800)}` : ""}
-${text(42, 270, label, 20, 800, "#163247")}
+${textBlock(42, 270, label, 286, 17, 800, "#163247", 18)}
 ${end}`;
   }
 
@@ -278,9 +330,9 @@ function svg(diagram) {
 <title id="title">${esc(diagram.title)}</title>
 <desc id="desc">초보자가 CNC 화면, 조작 순서, 장비 움직임을 함께 이해하도록 만든 교육용 도해</desc>
 <defs>
-  <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#176f8f"/></marker>
-  <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#d64242"/></marker>
-  <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#25a55f"/></marker>
+  <marker id="arrow-blue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1.5,1.5 L8,4.5 L1.5,7.5 Z" fill="#176f8f"/></marker>
+  <marker id="arrow-red" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1.5,1.5 L8,4.5 L1.5,7.5 Z" fill="#d64242"/></marker>
+  <marker id="arrow-green" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1.5,1.5 L8,4.5 L1.5,7.5 Z" fill="#25a55f"/></marker>
 </defs>
 <rect width="1000" height="720" fill="#ffffff"/>
 <rect x="24" y="24" width="952" height="672" rx="20" fill="#ffffff" stroke="#d8dde6" stroke-width="3"/>

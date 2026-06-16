@@ -19,23 +19,33 @@
 <rect x="72" y="148" width="520" height="40" rx="0" fill="#dcecff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="174" font-size="17" font-weight="800" fill="#102d3d">STEP</text>
 <text x="228" y="174" font-size="17" font-weight="800" fill="#102d3d">SCREEN / LAMP</text>
-<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">ACTION</text>
+<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">
+<tspan x="404" dy="0">ACTION</tspan>
+</text>
 <rect x="72" y="194" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="220" font-size="18" font-weight="600" fill="#102d3d">1</text>
 <text x="228" y="220" font-size="18" font-weight="600" fill="#102d3d">CNC BOOT OK</text>
-<text x="404" y="220" font-size="18" font-weight="600" fill="#102d3d">WAIT</text>
+<text x="404" y="220" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">WAIT</tspan>
+</text>
 <rect x="72" y="240" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="266" font-size="18" font-weight="600" fill="#102d3d">2</text>
 <text x="228" y="266" font-size="18" font-weight="600" fill="#102d3d">SERVO OFF</text>
-<text x="404" y="266" font-size="18" font-weight="600" fill="#102d3d">SERVO ON</text>
+<text x="404" y="266" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">SERVO ON</tspan>
+</text>
 <rect x="72" y="286" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="312" font-size="18" font-weight="600" fill="#102d3d">3</text>
 <text x="228" y="312" font-size="18" font-weight="600" fill="#102d3d">HOME REQUIRED</text>
-<text x="404" y="312" font-size="18" font-weight="600" fill="#102d3d">ZRN</text>
+<text x="404" y="312" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">ZRN</tspan>
+</text>
 <rect x="72" y="332" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="358" font-size="18" font-weight="600" fill="#102d3d">4</text>
 <text x="228" y="358" font-size="18" font-weight="600" fill="#102d3d">READY</text>
-<text x="404" y="358" font-size="18" font-weight="600" fill="#102d3d">MEM / JOG</text>
+<text x="404" y="358" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">MEM / JOG</tspan>
+</text>
 <rect x="74" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
 <text x="88" y="538" font-size="15" font-weight="800" fill="#0d4e67">SYSTEM</text>
 <rect x="178" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
@@ -115,8 +125,12 @@
 <circle cx="990" cy="696" r="32" fill="#d64242" stroke="#9b2525" stroke-width="5"/>
 <text x="964" y="701" font-size="13" font-weight="800" fill="#ffffff">E-STOP</text>
 </g>
-<rect x="46" y="656" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="677" font-size="16" font-weight="700" fill="#163247">전원 투입 후 바로 가공하지 않고 Servo ON과 원점복귀 요구를 확인한다.</text>
-<rect x="46" y="690" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="711" font-size="16" font-weight="700" fill="#163247">전원 차단은 주축 정지, 축 정지, Servo OFF를 확인한 뒤 진행한다.</text>
+<rect x="46" y="652" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="672" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">전원 투입 후 바로 가공하지 않고 Servo ON과 원점복귀 요구를 확인한다.</tspan>
+</text>
+<rect x="46" y="694" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="714" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">전원 차단은 주축 정지, 축 정지, Servo OFF를 확인한 뒤 진행한다.</tspan>
+</text>
 </svg>

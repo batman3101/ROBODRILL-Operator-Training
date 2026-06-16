@@ -19,23 +19,33 @@
 <rect x="72" y="148" width="520" height="40" rx="0" fill="#dcecff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="174" font-size="17" font-weight="800" fill="#102d3d">BLOCK</text>
 <text x="228" y="174" font-size="17" font-weight="800" fill="#102d3d">CODE</text>
-<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">MEANING</text>
+<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">
+<tspan x="404" dy="0">MEANING</tspan>
+</text>
 <rect x="72" y="194" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="220" font-size="18" font-weight="600" fill="#102d3d">O0002</text>
 <text x="228" y="220" font-size="18" font-weight="600" fill="#102d3d">PROGRAM NO</text>
-<text x="404" y="220" font-size="18" font-weight="600" fill="#102d3d">ID</text>
+<text x="404" y="220" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">ID</tspan>
+</text>
 <rect x="72" y="240" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="266" font-size="18" font-weight="600" fill="#102d3d">G90 G54 G17</text>
 <text x="228" y="266" font-size="18" font-weight="600" fill="#102d3d">SAFETY</text>
-<text x="404" y="266" font-size="18" font-weight="600" fill="#102d3d">MODE</text>
+<text x="404" y="266" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">MODE</tspan>
+</text>
 <rect x="72" y="286" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="312" font-size="18" font-weight="600" fill="#102d3d">T01 M06</text>
 <text x="228" y="312" font-size="18" font-weight="600" fill="#102d3d">TOOL CHANGE</text>
-<text x="404" y="312" font-size="18" font-weight="600" fill="#102d3d">TOOL</text>
+<text x="404" y="312" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">TOOL</tspan>
+</text>
 <rect x="72" y="332" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="358" font-size="18" font-weight="600" fill="#102d3d">G00 X0. Y0.</text>
 <text x="228" y="358" font-size="18" font-weight="600" fill="#102d3d">RAPID MOVE</text>
-<text x="404" y="358" font-size="18" font-weight="600" fill="#102d3d">POSITION</text>
+<text x="404" y="358" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">POSITION</tspan>
+</text>
 <rect x="74" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
 <text x="88" y="538" font-size="15" font-weight="800" fill="#0d4e67">PROG</text>
 <rect x="178" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
@@ -115,8 +125,12 @@
 <circle cx="990" cy="696" r="32" fill="#d64242" stroke="#9b2525" stroke-width="5"/>
 <text x="964" y="701" font-size="13" font-weight="800" fill="#ffffff">E-STOP</text>
 </g>
-<rect x="46" y="656" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="677" font-size="16" font-weight="700" fill="#163247">프로그램은 줄 단위로 읽고 첫 이동 위치를 반드시 확인한다.</text>
-<rect x="46" y="690" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="711" font-size="16" font-weight="700" fill="#163247">안전 시작줄의 G90/G54/G17 같은 모드 코드를 설명할 수 있어야 한다.</text>
+<rect x="46" y="652" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="672" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">프로그램은 줄 단위로 읽고 첫 이동 위치를 반드시 확인한다.</tspan>
+</text>
+<rect x="46" y="694" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="714" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">안전 시작줄의 G90 / G54 / G17 같은 모드 코드를 설명할 수 있어야 한다.</tspan>
+</text>
 </svg>

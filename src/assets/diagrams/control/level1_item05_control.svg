@@ -19,23 +19,33 @@
 <rect x="72" y="148" width="520" height="40" rx="0" fill="#dcecff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="174" font-size="17" font-weight="800" fill="#102d3d">FIELD</text>
 <text x="228" y="174" font-size="17" font-weight="800" fill="#102d3d">VALUE</text>
-<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">CHECK</text>
+<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">
+<tspan x="404" dy="0">CHECK</tspan>
+</text>
 <rect x="72" y="194" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="220" font-size="18" font-weight="600" fill="#102d3d">AXIS</text>
 <text x="228" y="220" font-size="18" font-weight="600" fill="#102d3d">Z</text>
-<text x="404" y="220" font-size="18" font-weight="600" fill="#102d3d">SELECTED</text>
+<text x="404" y="220" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">SELECTED</tspan>
+</text>
 <rect x="72" y="240" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="266" font-size="18" font-weight="600" fill="#102d3d">MULTIPLY</text>
 <text x="228" y="266" font-size="18" font-weight="600" fill="#102d3d">x10</text>
-<text x="404" y="266" font-size="18" font-weight="600" fill="#102d3d">CONFIRM</text>
+<text x="404" y="266" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">CONFIRM</tspan>
+</text>
 <rect x="72" y="286" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="312" font-size="18" font-weight="600" fill="#102d3d">ONE CLICK</text>
 <text x="228" y="312" font-size="18" font-weight="600" fill="#102d3d">0.010 mm</text>
-<text x="404" y="312" font-size="18" font-weight="600" fill="#102d3d">SLOW</text>
+<text x="404" y="312" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">SLOW</tspan>
+</text>
 <rect x="72" y="332" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="358" font-size="18" font-weight="600" fill="#102d3d">DIRECTION</text>
 <text x="228" y="358" font-size="18" font-weight="600" fill="#102d3d">CW + / CCW -</text>
-<text x="404" y="358" font-size="18" font-weight="600" fill="#102d3d">VERIFY</text>
+<text x="404" y="358" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">VERIFY</tspan>
+</text>
 <rect x="74" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
 <text x="88" y="538" font-size="15" font-weight="800" fill="#0d4e67">POS</text>
 <rect x="178" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
@@ -115,8 +125,12 @@
 <circle cx="990" cy="696" r="32" fill="#d64242" stroke="#9b2525" stroke-width="5"/>
 <text x="964" y="701" font-size="13" font-weight="800" fill="#ffffff">E-STOP</text>
 </g>
-<rect x="46" y="656" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="677" font-size="16" font-weight="700" fill="#163247">핸들 회전 전 축과 배율을 크게 읽고 한 클릭씩 접근한다.</text>
-<rect x="46" y="690" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="711" font-size="16" font-weight="700" fill="#163247">시계/반시계 방향의 실제 이동 방향은 장비 축 표기와 함께 확인한다.</text>
+<rect x="46" y="652" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="672" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">핸들 회전 전 축과 배율을 크게 읽고 한 클릭씩 접근한다.</tspan>
+</text>
+<rect x="46" y="694" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="714" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">시계 / 반시계 방향의 실제 이동 방향은 장비 축 표기와 함께 확인한다.</tspan>
+</text>
 </svg>

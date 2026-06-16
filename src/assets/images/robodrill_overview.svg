@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
-  <title id="title">ROBODRILL machine overview</title>
-  <desc id="desc">Simplified front view of a FANUC ROBODRILL machining center for beginner training.</desc>
+  <title id="title">ROBODRILL 장비 구성 개요</title>
+  <desc id="desc">초보자 교육용으로 단순화한 FANUC ROBODRILL 정면 구성 도해</desc>
   <rect width="900" height="520" fill="#f8fafc"/>
   <rect x="120" y="58" width="500" height="392" rx="14" fill="#dfe7ef" stroke="#6b7785" stroke-width="5"/>
   <rect x="160" y="100" width="300" height="250" rx="6" fill="#b9c6d4" stroke="#44515f" stroke-width="4"/>
@@ -15,6 +15,6 @@
   <circle cx="759" cy="218" r="15" fill="#3c9b5f"/>
   <rect x="700" y="254" width="74" height="42" rx="4" fill="#f6c343"/>
   <line x1="632" y1="175" x2="678" y2="175" stroke="#44515f" stroke-width="7" stroke-linecap="round"/>
-  <text x="370" y="472" fill="#0d4e67" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle">Machine body and work area</text>
-  <text x="737" y="386" fill="#0d4e67" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle">CNC panel</text>
+  <text x="370" y="472" fill="#0d4e67" font-family="Arial, Malgun Gothic, sans-serif" font-size="28" font-weight="700" text-anchor="middle">장비 본체와 작업 영역</text>
+  <text x="737" y="386" fill="#0d4e67" font-family="Arial, Malgun Gothic, sans-serif" font-size="25" font-weight="700" text-anchor="middle">CNC 패널</text>
 </svg>

@@ -210,7 +210,7 @@ const items = [
     mode: "LOG",
     status: "RECORD",
     screenTitle: "WORK RECORD",
-    rows: [["FIELD", "VALUE", "SOURCE"], ["PROGRAM", "O0002", "SCREEN"], ["TOOL", "T01/T02", "OFFSET"], ["WORK OFFSET", "G54", "OFFSET"], ["ALARM/MEASURE", "WRITE", "LOG"]],
+    rows: [["FIELD", "VALUE", "SOURCE"], ["PROGRAM", "O0002", "SCREEN"], ["TOOL", "T01/T02", "OFFSET"], ["WORK OFFSET", "G54", "OFFSET"], ["ALARM / MEAS.", "WRITE", "LOG"]],
     softKeys: ["PROG", "OFFSET", "ALARM", "LOG", "SAVE"],
     highlights: ["PROG", "OFFSET", "MESSAGE", "SAVE"],
     callouts: ["기록지는 기억이 아니라 다음 작업자가 조건을 재현할 수 있게 하는 증거이다.", "프로그램, 공구, 좌표, 알람, 측정 결과를 같은 기준으로 남긴다."]
@@ -264,6 +264,44 @@ function t(x, y, value, size = 20, weight = 600, fill = "#0f2433") {
   return `<text x="${x}" y="${y}" font-size="${size}" font-weight="${weight}" fill="${fill}">${esc(value)}</text>`;
 }
 
+function estimateWidth(value, size) {
+  return Array.from(String(value)).reduce((width, ch) => {
+    const code = ch.codePointAt(0);
+    if (/\s/.test(ch)) return width + size * 0.32;
+    if (code >= 0xac00 && code <= 0xd7a3) return width + size * 0.92;
+    if (code > 127) return width + size * 0.74;
+    if (/[A-Z0-9]/.test(ch)) return width + size * 0.62;
+    return width + size * 0.5;
+  }, 0);
+}
+
+function wrapText(value, size, maxWidth) {
+  const normalized = String(value).replaceAll("/", " / ").replace(/\s+/g, " ").trim();
+  const words = normalized.split(" ");
+  const lines = [];
+  let current = "";
+
+  for (const word of words) {
+    const next = current ? `${current} ${word}` : word;
+    if (estimateWidth(next, size) <= maxWidth || !current) {
+      current = next;
+    } else {
+      lines.push(current);
+      current = word;
+    }
+  }
+
+  if (current) lines.push(current);
+  return lines.length > 0 ? lines : [""];
+}
+
+function textBlock(x, y, value, maxWidth, size = 16, weight = 700, fill = "#163247", lineHeight = 19) {
+  const lines = wrapText(value, size, maxWidth);
+  return `<text x="${x}" y="${y}" font-size="${size}" font-weight="${weight}" fill="${fill}">
+${lines.map((line, index) => `<tspan x="${x}" dy="${index === 0 ? 0 : lineHeight}">${esc(line)}</tspan>`).join("\n")}
+</text>`;
+}
+
 function rect(x, y, w, h, fill, stroke = "#9fb0c2", r = 6, sw = 2) {
   return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}"/>`;
 }
@@ -276,7 +314,7 @@ function screenRows(rows) {
     return `${rect(72, y - 30, 520, 40, fill, "#9fb0c2", 0, 1)}
 ${t(colX[0], y - 4, row[0] ?? "", index === 0 ? 17 : 18, index === 0 ? 800 : 600, "#102d3d")}
 ${t(colX[1], y - 4, row[1] ?? "", index === 0 ? 17 : 18, index === 0 ? 800 : 600, "#102d3d")}
-${t(colX[2], y - 4, row[2] ?? "", index === 0 ? 17 : 18, index === 0 ? 800 : 600, "#102d3d")}`;
+${textBlock(colX[2], y - 4, row[2] ?? "", 172, index === 0 ? 17 : 17, index === 0 ? 800 : 600, "#102d3d", 17)}`;
   }).join("\n");
 }
 
@@ -354,9 +392,9 @@ ${t(964, 701, "E-STOP", 13, 800, "#ffffff")}
 
 function callouts(item) {
   return item.callouts.map((line, index) => {
-    const y = 680 + index * 34;
-    return `${rect(46, y - 24, 590, 30, "#eef8f3", "#9bc7af", 6, 1)}
-${t(64, y - 3, line, 16, 700, "#163247")}`;
+    const y = 676 + index * 42;
+    return `${rect(46, y - 24, 590, 38, "#eef8f3", "#9bc7af", 6, 1)}
+${textBlock(64, y - 4, line, 540, 15, 700, "#163247", 17)}`;
   }).join("\n");
 }
 

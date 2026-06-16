@@ -11,6 +11,7 @@
     "pdf:sample": "node scripts/build-pdf.mjs --lang ko --item 01",
     "pdf:ko": "node scripts/build-pdf.mjs --lang ko --book",
     "pdf:vi": "node scripts/build-pdf.mjs --lang vi --book",
+    "qa:visual": "node scripts/check-visual-layout.mjs",
     "build": "npm run diagrams:generate && npm run content:generate && node scripts/build-pdf.mjs --all"
   },
   "engines": {

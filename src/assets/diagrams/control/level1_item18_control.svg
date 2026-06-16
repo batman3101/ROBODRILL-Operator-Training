@@ -19,23 +19,33 @@
 <rect x="72" y="148" width="520" height="40" rx="0" fill="#dcecff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="174" font-size="17" font-weight="800" fill="#102d3d">ITEM</text>
 <text x="228" y="174" font-size="17" font-weight="800" fill="#102d3d">NOMINAL</text>
-<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">RESULT</text>
+<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">
+<tspan x="404" dy="0">RESULT</tspan>
+</text>
 <rect x="72" y="194" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="220" font-size="18" font-weight="600" fill="#102d3d">X SIZE</text>
 <text x="228" y="220" font-size="18" font-weight="600" fill="#102d3d">25.000</text>
-<text x="404" y="220" font-size="18" font-weight="600" fill="#102d3d">OK/NG</text>
+<text x="404" y="220" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">OK / NG</tspan>
+</text>
 <rect x="72" y="240" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="266" font-size="18" font-weight="600" fill="#102d3d">Y SIZE</text>
 <text x="228" y="266" font-size="18" font-weight="600" fill="#102d3d">40.000</text>
-<text x="404" y="266" font-size="18" font-weight="600" fill="#102d3d">OK/NG</text>
+<text x="404" y="266" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">OK / NG</tspan>
+</text>
 <rect x="72" y="286" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="312" font-size="18" font-weight="600" fill="#102d3d">BURR</text>
 <text x="228" y="312" font-size="18" font-weight="600" fill="#102d3d">NONE</text>
-<text x="404" y="312" font-size="18" font-weight="600" fill="#102d3d">CHECK</text>
+<text x="404" y="312" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">CHECK</tspan>
+</text>
 <rect x="72" y="332" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="358" font-size="18" font-weight="600" fill="#102d3d">SURFACE</text>
 <text x="228" y="358" font-size="18" font-weight="600" fill="#102d3d">GOOD</text>
-<text x="404" y="358" font-size="18" font-weight="600" fill="#102d3d">CHECK</text>
+<text x="404" y="358" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">CHECK</tspan>
+</text>
 <rect x="74" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
 <text x="88" y="538" font-size="15" font-weight="800" fill="#0d4e67">CHECK</text>
 <rect x="178" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
@@ -115,8 +125,12 @@
 <circle cx="990" cy="696" r="32" fill="#d64242" stroke="#9b2525" stroke-width="5"/>
 <text x="964" y="701" font-size="13" font-weight="800" fill="#ffffff">E-STOP</text>
 </g>
-<rect x="46" y="656" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="677" font-size="16" font-weight="700" fill="#163247">첫 제품은 치수, 버, 표면 상태를 보고 필요하면 보정값 변경을 검토한다.</text>
-<rect x="46" y="690" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="711" font-size="16" font-weight="700" fill="#163247">측정 결과가 기록되기 전에는 연속 가공으로 넘어가지 않는다.</text>
+<rect x="46" y="652" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="672" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">첫 제품은 치수, 버, 표면 상태를 보고 필요하면 보정값 변경을 검토한다.</tspan>
+</text>
+<rect x="46" y="694" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="714" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">측정 결과가 기록되기 전에는 연속 가공으로 넘어가지 않는다.</tspan>
+</text>
 </svg>

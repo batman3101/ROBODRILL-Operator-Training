@@ -19,23 +19,33 @@
 <rect x="72" y="148" width="520" height="40" rx="0" fill="#dcecff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="174" font-size="17" font-weight="800" fill="#102d3d">AREA</text>
 <text x="228" y="174" font-size="17" font-weight="800" fill="#102d3d">CHECK POINT</text>
-<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">STATE</text>
+<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">
+<tspan x="404" dy="0">STATE</tspan>
+</text>
 <rect x="72" y="194" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="220" font-size="18" font-weight="600" fill="#102d3d">PANEL</text>
 <text x="228" y="220" font-size="18" font-weight="600" fill="#102d3d">CNC / soft keys</text>
-<text x="404" y="220" font-size="18" font-weight="600" fill="#102d3d">READY</text>
+<text x="404" y="220" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">READY</tspan>
+</text>
 <rect x="72" y="240" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="266" font-size="18" font-weight="600" fill="#102d3d">SPINDLE</text>
 <text x="228" y="266" font-size="18" font-weight="600" fill="#102d3d">tool clamped</text>
-<text x="404" y="266" font-size="18" font-weight="600" fill="#102d3d">STOP</text>
+<text x="404" y="266" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">STOP</tspan>
+</text>
 <rect x="72" y="286" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="312" font-size="18" font-weight="600" fill="#102d3d">ATC</text>
 <text x="228" y="312" font-size="18" font-weight="600" fill="#102d3d">magazine home</text>
-<text x="404" y="312" font-size="18" font-weight="600" fill="#102d3d">READY</text>
+<text x="404" y="312" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">READY</tspan>
+</text>
 <rect x="72" y="332" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="358" font-size="18" font-weight="600" fill="#102d3d">DOOR</text>
 <text x="228" y="358" font-size="18" font-weight="600" fill="#102d3d">interlock</text>
-<text x="404" y="358" font-size="18" font-weight="600" fill="#102d3d">CLOSED</text>
+<text x="404" y="358" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">CLOSED</tspan>
+</text>
 <rect x="74" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
 <text x="88" y="538" font-size="15" font-weight="800" fill="#0d4e67">SYSTEM</text>
 <rect x="178" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
@@ -115,8 +125,12 @@
 <circle cx="990" cy="696" r="32" fill="#d64242" stroke="#9b2525" stroke-width="5"/>
 <text x="964" y="701" font-size="13" font-weight="800" fill="#ffffff">E-STOP</text>
 </g>
-<rect x="46" y="656" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="677" font-size="16" font-weight="700" fill="#163247">패널, 주축, ATC, 작업영역을 같은 화면 흐름으로 연결해 본다.</text>
-<rect x="46" y="690" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="711" font-size="16" font-weight="700" fill="#163247">처음에는 화면 상태와 실제 장비 위치를 번갈아 확인한다.</text>
+<rect x="46" y="652" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="672" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">패널, 주축, ATC, 작업영역을 같은 화면 흐름으로 연결해 본다.</tspan>
+</text>
+<rect x="46" y="694" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="714" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">처음에는 화면 상태와 실제 장비 위치를 번갈아 확인한다.</tspan>
+</text>
 </svg>

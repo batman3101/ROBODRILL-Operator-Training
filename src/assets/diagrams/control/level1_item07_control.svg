@@ -19,23 +19,33 @@
 <rect x="72" y="148" width="520" height="40" rx="0" fill="#dcecff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="174" font-size="17" font-weight="800" fill="#102d3d">LINE</text>
 <text x="228" y="174" font-size="17" font-weight="800" fill="#102d3d">COMMAND</text>
-<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">CHECK</text>
+<text x="404" y="174" font-size="17" font-weight="800" fill="#102d3d">
+<tspan x="404" dy="0">CHECK</tspan>
+</text>
 <rect x="72" y="194" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="220" font-size="18" font-weight="600" fill="#102d3d">N001</text>
 <text x="228" y="220" font-size="18" font-weight="600" fill="#102d3d">G91 G28 Z0.</text>
-<text x="404" y="220" font-size="18" font-weight="600" fill="#102d3d">RETURN Z</text>
+<text x="404" y="220" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">RETURN Z</tspan>
+</text>
 <rect x="72" y="240" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="266" font-size="18" font-weight="600" fill="#102d3d">N002</text>
 <text x="228" y="266" font-size="18" font-weight="600" fill="#102d3d">M03 S1000</text>
-<text x="404" y="266" font-size="18" font-weight="600" fill="#102d3d">SPINDLE</text>
+<text x="404" y="266" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">SPINDLE</tspan>
+</text>
 <rect x="72" y="286" width="520" height="40" rx="0" fill="#f4f8fb" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="312" font-size="18" font-weight="600" fill="#102d3d">N003</text>
 <text x="228" y="312" font-size="18" font-weight="600" fill="#102d3d">M05</text>
-<text x="404" y="312" font-size="18" font-weight="600" fill="#102d3d">STOP</text>
+<text x="404" y="312" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">STOP</tspan>
+</text>
 <rect x="72" y="332" width="520" height="40" rx="0" fill="#ffffff" stroke="#9fb0c2" stroke-width="1"/>
 <text x="88" y="358" font-size="18" font-weight="600" fill="#102d3d">RUN</text>
 <text x="228" y="358" font-size="18" font-weight="600" fill="#102d3d">CYCLE START</text>
-<text x="404" y="358" font-size="18" font-weight="600" fill="#102d3d">AFTER CONFIRM</text>
+<text x="404" y="358" font-size="17" font-weight="600" fill="#102d3d">
+<tspan x="404" dy="0">AFTER CONFIRM</tspan>
+</text>
 <rect x="74" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
 <text x="88" y="538" font-size="15" font-weight="800" fill="#0d4e67">MDI</text>
 <rect x="178" y="512" width="94" height="40" rx="5" fill="#eef6ff" stroke="#8cb6d7" stroke-width="2"/>
@@ -115,8 +125,12 @@
 <circle cx="990" cy="696" r="32" fill="#d64242" stroke="#9b2525" stroke-width="5"/>
 <text x="964" y="701" font-size="13" font-weight="800" fill="#ffffff">E-STOP</text>
 </g>
-<rect x="46" y="656" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="677" font-size="16" font-weight="700" fill="#163247">짧은 명령도 실제 장비 움직임으로 이어지므로 실행 전 한 줄씩 읽는다.</text>
-<rect x="46" y="690" width="590" height="30" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
-<text x="64" y="711" font-size="16" font-weight="700" fill="#163247">좌표계, 주축 회전, 공구 위치를 확인한 뒤 Cycle Start를 누른다.</text>
+<rect x="46" y="652" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="672" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">짧은 명령도 실제 장비 움직임으로 이어지므로 실행 전 한 줄씩 읽는다.</tspan>
+</text>
+<rect x="46" y="694" width="590" height="38" rx="6" fill="#eef8f3" stroke="#9bc7af" stroke-width="1"/>
+<text x="64" y="714" font-size="15" font-weight="700" fill="#163247">
+<tspan x="64" dy="0">좌표계, 주축 회전, 공구 위치를 확인한 뒤 Cycle Start를 누른다.</tspan>
+</text>
 </svg>

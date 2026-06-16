@@ -2,9 +2,9 @@
 <title id="title">프로그램 호출 화면과 실행 전 점검</title>
 <desc id="desc">초보자가 CNC 화면, 조작 순서, 장비 움직임을 함께 이해하도록 만든 교육용 도해</desc>
 <defs>
-  <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#176f8f"/></marker>
-  <marker id="arrow-red" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#d64242"/></marker>
-  <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2,2 L10,6 L2,10 Z" fill="#25a55f"/></marker>
+  <marker id="arrow-blue" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1.5,1.5 L8,4.5 L1.5,7.5 Z" fill="#176f8f"/></marker>
+  <marker id="arrow-red" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1.5,1.5 L8,4.5 L1.5,7.5 Z" fill="#d64242"/></marker>
+  <marker id="arrow-green" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M1.5,1.5 L8,4.5 L1.5,7.5 Z" fill="#25a55f"/></marker>
 </defs>
 <rect width="1000" height="720" fill="#ffffff"/>
 <rect x="24" y="24" width="952" height="672" rx="20" fill="#ffffff" stroke="#d8dde6" stroke-width="3"/>
@@ -36,20 +36,28 @@
 <rect x="174" y="262" width="94" height="34" rx="8" fill="#d64242"/><text x="199" y="286" font-size="17" font-weight="800" fill="#ffffff">STOP</text>
 </g>
 <text x="54" y="492" font-size="22" font-weight="800" fill="#0d4e67">학습 순서</text>
-<rect x="54" y="522" width="376" height="48" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
+<rect x="54" y="522" width="376" height="52" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
 <circle cx="82" cy="546" r="15" fill="#176f8f"/>
 <text x="77" y="553" font-size="18" font-weight="800" fill="#ffffff">1</text>
-<text x="110" y="553" font-size="18" font-weight="700" fill="#163247">프로그램 번호 확인</text>
-<rect x="470" y="522" width="376" height="48" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
+<text x="110" y="547" font-size="16" font-weight="700" fill="#163247">
+<tspan x="110" dy="0">프로그램 번호 확인</tspan>
+</text>
+<rect x="470" y="522" width="376" height="52" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
 <circle cx="498" cy="546" r="15" fill="#176f8f"/>
 <text x="493" y="553" font-size="18" font-weight="800" fill="#ffffff">2</text>
-<text x="526" y="553" font-size="18" font-weight="700" fill="#163247">선택된 O번호 읽기</text>
-<rect x="54" y="590" width="376" height="48" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
+<text x="526" y="547" font-size="16" font-weight="700" fill="#163247">
+<tspan x="526" dy="0">선택된 O번호 읽기</tspan>
+</text>
+<rect x="54" y="590" width="376" height="52" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
 <circle cx="82" cy="614" r="15" fill="#176f8f"/>
 <text x="77" y="621" font-size="18" font-weight="800" fill="#ffffff">3</text>
-<text x="110" y="621" font-size="18" font-weight="700" fill="#163247">첫 줄과 공구번호 확인</text>
-<rect x="470" y="590" width="376" height="48" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
+<text x="110" y="615" font-size="16" font-weight="700" fill="#163247">
+<tspan x="110" dy="0">첫 줄과 공구번호 확인</tspan>
+</text>
+<rect x="470" y="590" width="376" height="52" rx="10" fill="#eef3f8" stroke="#b8c4d2"/>
 <circle cx="498" cy="614" r="15" fill="#176f8f"/>
 <text x="493" y="621" font-size="18" font-weight="800" fill="#ffffff">4</text>
-<text x="526" y="621" font-size="18" font-weight="700" fill="#163247">Cycle Start 전 Dry Run</text>
+<text x="526" y="615" font-size="16" font-weight="700" fill="#163247">
+<tspan x="526" dy="0">Cycle Start 전 Dry Run</tspan>
+</text>
 </svg>
