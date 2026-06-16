@@ -135,7 +135,7 @@ function markdownToHtml(markdown, baseDir) {
     if (/^<[^>]+>/.test(trimmed) || /^<\/[^>]+>/.test(trimmed)) {
       closeParagraph();
       closeList();
-      output.push(line);
+      output.push(line.replace(/src="([^"]+)"/g, (_, src) => `src="${toAssetUrl(src, baseDir)}"`));
       continue;
     }
 

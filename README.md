@@ -56,6 +56,10 @@ npm run pdf:sample
 
 이 방식은 reportlab으로 PDF를 직접 조립하지 않고, HTML/CSS를 먼저 만든 다음 Chrome 또는 Edge의 인쇄 엔진으로 PDF를 출력합니다.
 
+HTML 출력은 화면 검수용 좌우 여백과 중앙 문서 폭을 별도로 적용합니다. PDF 인쇄는 A4 여백 규칙을 사용합니다.
+
+각 항목에는 실제 설비 이미지와 함께 안전, 관찰, 절차, 점검, 실습 포인트를 설명하는 교육용 일반 그림 카드가 포함됩니다. 일반 그림은 Bootstrap Icons SVG를 로컬 자산으로 저장해 사용합니다.
+
 ## 실제 교재 제작 계획
 
 20개 항목, 총 200-250페이지 규모의 기초과정 제작 흐름은 [MANUAL_PRODUCTION_PLAN.md](MANUAL_PRODUCTION_PLAN.md)에 정리되어 있습니다.

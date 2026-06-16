@@ -28,3 +28,13 @@
 - URL: https://www.fanucamerica.com/products/robodrill
 - Rights note: Official FANUC product image. Use is subject to FANUC's site terms and permissions.
 - Use: Automatic tool changer explanatory image.
+
+## Bootstrap Icons educational SVGs
+
+- Source: Bootstrap Icons official open source SVG icon library
+- URL: https://icons.getbootstrap.com/
+- CDN: https://www.jsdelivr.com/package/npm/bootstrap-icons
+- License: MIT
+- Local path: `src/assets/icons/bootstrap/`
+- Use: General educational illustrations for safety, observation, procedure, checklist, practice, and test sections.
+- License copy: `src/assets/icons/bootstrap/LICENSE`

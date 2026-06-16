@@ -64,6 +64,7 @@ output/pdf/vi/fanuc_robodrill_level1_manual_vi.pdf
 
 - 장비 사진 또는 실제 화면 캡처는 `src/assets/images/`에 둔다.
 - 개념도, 좌표계, 작업 흐름도는 `src/assets/diagrams/`에 둔다.
+- 안전, 관찰, 절차, 점검, 실습을 설명하는 일반 교육 그림은 `src/assets/icons/bootstrap/`에 둔다.
 - 원고에서는 상대 경로 Markdown 이미지 문법을 사용한다.
 - 웹에서 가져온 이미지는 `src/assets/images/ATTRIBUTION.md`에 출처, 작성자, 라이선스 또는 사용권 주의사항을 남긴다.
 - 재배포용 교재에는 공식 제조사 이미지의 사용 허가 여부를 별도로 확인한다.
@@ -77,7 +78,9 @@ output/pdf/vi/fanuc_robodrill_level1_manual_vi.pdf
 ## 검수 기준
 
 - 한글 글자가 네모 또는 깨진 글리프로 출력되지 않아야 한다.
+- HTML 화면 검수본은 좌우 여백과 중앙 문서 폭이 있어야 한다.
 - 표와 도해가 페이지 밖으로 넘치지 않아야 한다.
+- 각 항목은 실제 이미지 외에도 설명 포인트별 교육용 일반 그림을 포함해야 한다.
 - 실습 절차가 초보자 기준으로 독립 실행 가능해야 한다.
 - 안전 경고는 본문보다 눈에 띄어야 한다.
 - HTML과 PDF 산출물이 모두 생성되어야 한다.

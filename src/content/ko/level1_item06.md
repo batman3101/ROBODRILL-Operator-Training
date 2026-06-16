@@ -40,6 +40,29 @@
 
 좌표계 이해에서 가장 위험한 순간은 작업자가 장비 상태를 확인하지 않고 다음 동작을 실행할 때이다. 특히 주축, 축 이동, 공구 교환, 좌표 입력, 프로그램 실행은 화면 조작이 실제 기계 움직임으로 연결된다. 초보자는 화면의 숫자와 실제 공구 위치를 항상 함께 보아야 한다.
 
+<div class="visual-strip">
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/shield-exclamation.svg" alt="위험 인지">
+<strong>위험 인지</strong>
+<span>움직일 수 있는 부위를 먼저 찾는다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/eye.svg" alt="상태 관찰">
+<strong>상태 관찰</strong>
+<span>화면과 실제 위치를 함께 본다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/stop-circle.svg" alt="즉시 정지">
+<strong>즉시 정지</strong>
+<span>예상과 다르면 먼저 멈춘다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/clipboard-check.svg" alt="보고 기록">
+<strong>보고 기록</strong>
+<span>알람과 조건을 남긴다</span>
+</div>
+</div>
+
 | 위험 상황 | 발생 원인 | 예방 행동 |
 | --- | --- | --- |
 | 예상과 다른 축 이동 | 축 선택, 방향, 좌표계를 혼동함 | 움직일 축과 방향을 말로 확인한다 |
@@ -63,6 +86,29 @@
 
 좌표계 이해의 핵심은 절차 자체보다 절차가 필요한 이유를 이해하는 것이다. ROBODRILL은 작고 빠른 장비이므로 작은 확인 누락도 빠른 충돌이나 품질 문제로 이어질 수 있다. 따라서 초급 과정에서는 정확한 가공 조건보다 안전한 관찰 습관을 먼저 고정한다.
 
+<div class="visual-strip">
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/diagram-3.svg" alt="관계 이해">
+<strong>관계 이해</strong>
+<span>버튼, 화면, 장치 움직임을 연결한다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/crosshair.svg" alt="기준 확인">
+<strong>기준 확인</strong>
+<span>좌표와 기준면을 구분한다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/tools.svg" alt="공구 상태">
+<strong>공구 상태</strong>
+<span>공구와 홀더 상태를 확인한다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/bullseye.svg" alt="목표 위치">
+<strong>목표 위치</strong>
+<span>가야 할 위치와 위험 위치를 나눈다</span>
+</div>
+</div>
+
 | 핵심 용어 | 의미 | 현장 확인 |
 | --- | --- | --- |
 | 상태 확인 | 장비가 어떤 모드와 조건인지 읽는 것 | 화면, 램프, 알람, 오버라이드 |
@@ -75,6 +121,29 @@
 ## 단계별 절차
 
 다음 절차는 교육용 기본 흐름이다. 실제 현장 절차가 있으면 현장 절차를 우선한다.
+
+<div class="visual-strip">
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/list-check.svg" alt="순서 확인">
+<strong>순서 확인</strong>
+<span>작업 전 흐름을 말로 설명한다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/speedometer2.svg" alt="속도 제한">
+<strong>속도 제한</strong>
+<span>첫 동작은 낮은 오버라이드로 시작한다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/arrows-move.svg" alt="짧은 이동">
+<strong>짧은 이동</strong>
+<span>한 번 움직이고 멈춰서 본다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/check2-square.svg" alt="다음 단계">
+<strong>다음 단계</strong>
+<span>정상일 때만 다음으로 간다</span>
+</div>
+</div>
 
 1. 작업 전 주변 정리, 보호구, 비상정지 위치를 확인한다.
 2. CNC 화면에서 현재 모드, 알람, 프로그램 상태를 읽는다.
@@ -93,6 +162,29 @@
 
 ## 현장 체크리스트
 
+<div class="visual-strip">
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/clipboard-check.svg" alt="점검표">
+<strong>점검표</strong>
+<span>누락 없이 확인한다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/exclamation-triangle.svg" alt="이상 표시">
+<strong>이상 표시</strong>
+<span>알람과 메시지를 읽는다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/gear.svg" alt="기계 조건">
+<strong>기계 조건</strong>
+<span>도어, Servo, 오버라이드를 본다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/journal-check.svg" alt="작업 기록">
+<strong>작업 기록</strong>
+<span>누가 봐도 재현 가능하게 적는다</span>
+</div>
+</div>
+
 | 점검 항목 | 정상 기준 | 이상 시 조치 |
 | --- | --- | --- |
 | 주변 상태 | 통로, 바닥, 작업대가 정리되어 있다 | 정리 후 다시 시작 |
@@ -106,6 +198,29 @@
 [PAGE_BREAK]
 
 ## 실습
+
+<div class="visual-strip">
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/eye.svg" alt="보고 읽기">
+<strong>보고 읽기</strong>
+<span>먼저 보고 말한 뒤 조작한다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/cursor.svg" alt="조작 선택">
+<strong>조작 선택</strong>
+<span>버튼과 메뉴 이름을 확인한다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/pencil-square.svg" alt="결과 작성">
+<strong>결과 작성</strong>
+<span>실습 결과와 질문을 적는다</span>
+</div>
+<div class="visual-card">
+<img src="../../assets/icons/bootstrap/question-circle.svg" alt="질문">
+<strong>질문</strong>
+<span>불확실하면 멈추고 묻는다</span>
+</div>
+</div>
 
 ### 실습 A: 상태 읽기
 

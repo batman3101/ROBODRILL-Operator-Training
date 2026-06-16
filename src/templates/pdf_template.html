@@ -44,6 +44,31 @@
       background: white;
     }
 
+    @media screen {
+      body {
+        background: #edf1f5;
+        padding: 32px clamp(18px, 5vw, 72px);
+      }
+
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 42px clamp(24px, 5vw, 64px);
+        background: #ffffff;
+        border: 1px solid #d8dde6;
+        box-shadow: 0 18px 44px rgba(24, 32, 42, 0.12);
+      }
+
+      .print-header,
+      .print-footer {
+        display: none;
+      }
+
+      .cover {
+        min-height: 720px;
+      }
+    }
+
     .print-header,
     .print-footer {
       position: fixed;
@@ -259,6 +284,53 @@
     .small {
       color: var(--muted);
       font-size: 9pt;
+    }
+
+    .visual-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      margin: 4mm 0 5mm;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .visual-card {
+      min-height: 31mm;
+      padding: 3mm;
+      border: 0.25mm solid var(--line);
+      background: #fbfcfe;
+      text-align: center;
+    }
+
+    .visual-card img {
+      width: 13mm;
+      height: 13mm;
+      max-height: 13mm;
+      margin: 0 auto 2mm;
+      border: 0;
+      opacity: 0.9;
+    }
+
+    .visual-card strong {
+      display: block;
+      color: var(--accent-dark);
+      font-size: 9.2pt;
+      line-height: 1.25;
+    }
+
+    .visual-card span {
+      display: block;
+      margin-top: 1mm;
+      color: var(--muted);
+      font-size: 8pt;
+      line-height: 1.28;
+    }
+
+    @media screen {
+      .visual-strip {
+        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      }
     }
   </style>
 </head>
