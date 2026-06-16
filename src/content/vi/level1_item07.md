@@ -61,9 +61,15 @@ Trước khi thao tác, học viên đọc sơ đồ học của bài này và l
 
 Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.
 
+![Mockup màn hình CNC và bảng điều khiển cho Cách dùng MDI](../../assets/diagrams/control/level1_item07_control.svg)
+
+<p class="caption">Hình 7-2. Mockup màn hình CNC và bảng điều khiển cần đọc trong bài Cách dùng MDI.</p>
+
+Mockup này dùng để luyện cách đọc mode, trạng thái, tọa độ, chương trình, offset hoặc alarm trước khi thao tác trên máy thật. Phần bảng điều khiển bên phải đánh dấu nút hoặc núm xoay cần kiểm tra trong bài học. Bố cục trên máy thật có thể khác theo tùy chọn và phiên bản, nên khi học phải tìm vị trí có cùng ý nghĩa trên máy tại xưởng.
+
 ![Sơ đồ học chức năng Cách dùng MDI](../../assets/diagrams/training/level1_item07_study.svg)
 
-<p class="caption">Hình 7-2. Sơ đồ học cho Cách dùng MDI, gồm ví dụ màn hình CNC, thứ tự thao tác và chuyển động thật.</p>
+<p class="caption">Hình 7-3. Sơ đồ học cho Cách dùng MDI, gồm thứ tự thao tác và chuyển động thật.</p>
 
 Sơ đồ này không phải hình trang trí. Trước khi thực hành, học viên đọc màn hình CNC ở bên trái để biết mode, trục, số chương trình hoặc giá trị offset, sau đó nhìn phần chuyển động bên phải để hiểu cơ cấu nào sẽ di chuyển. Các bước bên dưới được dùng để báo cáo miệng với giảng viên rồi mới thao tác từng bước.
 

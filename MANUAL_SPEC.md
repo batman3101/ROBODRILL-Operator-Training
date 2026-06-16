@@ -65,6 +65,7 @@ output/pdf/vi/fanuc_robodrill_level1_manual_vi.pdf
 
 - 장비 사진 또는 실제 화면 캡처는 `src/assets/images/`에 둔다.
 - 개념도, 좌표계, 작업 흐름도는 `src/assets/diagrams/`에 둔다.
+- 항목별 CNC 화면과 조작 패널 mockup은 `src/assets/diagrams/control/`에 둔다.
 - CNC 화면 예시, 축 이동 방향, 핸들 회전 방향, 좌표/오프셋 표, 공구교환 흐름 등 기능 설명 도해는 `src/assets/diagrams/training/`에 둔다.
 - 원고에서는 상대 경로 Markdown 이미지 문법을 사용한다.
 - 웹에서 가져온 이미지는 `src/assets/images/ATTRIBUTION.md`에 출처, 작성자, 라이선스 또는 사용권 주의사항을 남긴다.
@@ -81,7 +82,7 @@ output/pdf/vi/fanuc_robodrill_level1_manual_vi.pdf
 - 한글 글자가 네모 또는 깨진 글리프로 출력되지 않아야 한다.
 - HTML 화면 검수본은 좌우 여백과 중앙 문서 폭이 있어야 한다.
 - 표와 도해가 페이지 밖으로 넘치지 않아야 한다.
-- 각 항목은 실제 이미지 외에도 CNC 화면, 조작 방향, 기계 동작, 확인 순서를 설명하는 학습용 도해를 포함해야 한다.
+- 각 항목은 실제 이미지 외에도 CNC 화면/패널 mockup, 조작 방향, 기계 동작, 확인 순서를 설명하는 학습용 도해를 포함해야 한다.
 - 교육용 그림은 작은 장식 아이콘이 아니라 학습자가 화면 값, 버튼 이름, 이동 방향, 확인 순서를 읽을 수 있는 기능 설명 그림이어야 한다.
 - 실습 절차가 초보자 기준으로 독립 실행 가능해야 한다.
 - 안전 경고는 본문보다 눈에 띄어야 한다.

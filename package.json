@@ -5,7 +5,7 @@
   "type": "module",
   "description": "FANUC ROBODRILL beginner training manual PDF generator using HTML and CSS.",
   "scripts": {
-    "diagrams:generate": "node scripts/generate-training-diagrams.mjs",
+    "diagrams:generate": "node scripts/generate-training-diagrams.mjs && node scripts/generate-control-mockups.mjs",
     "content:generate": "node scripts/generate-manual-content.mjs",
     "build:html": "node scripts/build-pdf.mjs --all --html-only",
     "pdf:sample": "node scripts/build-pdf.mjs --lang ko --item 01",
