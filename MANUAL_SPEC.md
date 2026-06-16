@@ -6,10 +6,10 @@
 
 ## 출력 방식
 
-1. `src/content/level1_item01.md`에 교육 원고를 작성한다.
+1. `src/content/ko/level1_itemXX.md`와 `src/content/vi/level1_itemXX.md`에 교육 원고를 작성한다.
 2. `scripts/build-pdf.mjs`가 Markdown을 HTML로 변환한다.
 3. `src/templates/pdf_template.html`의 인쇄 CSS를 적용한다.
-4. Chrome 또는 Edge의 headless print 기능으로 `output/pdf/level1_item01_sample.pdf`를 생성한다.
+4. Chrome 또는 Edge의 headless print 기능으로 언어별 항목 PDF와 통합 PDF를 생성한다.
 
 ## 페이지 기준
 
@@ -17,16 +17,18 @@
 - 여백: 상단 18mm, 좌우 16mm, 하단 18mm
 - 본문: 한국어 교육 교재용 가독성 우선
 - 구성: 목표, 핵심 개념, 절차, 표, 도해, 실습, 점검문제, 정답
-- 초급 01 항목 목표 분량: 10-15페이지
+- 각 항목 목표 분량: 10-20페이지
+- 언어별 통합본 목표 분량: 200-250페이지
 
 ## 한글 폰트 설계
 
-PDF에서 한글이 깨지지 않도록 다음 순서로 폰트를 적용한다.
+PDF에서 한국어와 베트남어가 깨지지 않도록 다음 순서로 폰트를 적용한다.
 
 1. `src/assets/fonts/`에 포함된 Noto Sans KR WOFF2 파일
 2. 운영체제에 설치된 `Noto Sans KR`
 3. Windows 기본 한국어 폰트 `Malgun Gothic`
-4. 일반 sans-serif
+4. `Noto Sans`, `Segoe UI`, `Arial`
+5. 일반 sans-serif
 
 권장 파일명:
 
@@ -37,6 +39,26 @@ src/assets/fonts/NotoSansKR-Bold.woff2
 ```
 
 템플릿은 `ManualKR` 폰트 패밀리를 본문 기본값으로 사용한다. 실제 배포용 PDF에서는 폰트 파일을 저장소에 넣어 OS 설치 상태와 무관하게 동일한 결과가 나오도록 한다.
+
+## 언어별 산출물
+
+```text
+src/content/ko/level1_item01.md ... level1_item20.md
+src/content/vi/level1_item01.md ... level1_item20.md
+output/html/ko/
+output/html/vi/
+output/pdf/ko/
+output/pdf/vi/
+```
+
+통합본:
+
+```text
+output/html/ko/fanuc_robodrill_level1_manual_ko.html
+output/pdf/ko/fanuc_robodrill_level1_manual_ko.pdf
+output/html/vi/fanuc_robodrill_level1_manual_vi.html
+output/pdf/vi/fanuc_robodrill_level1_manual_vi.pdf
+```
 
 ## 이미지와 도해
 

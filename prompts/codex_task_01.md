@@ -15,8 +15,9 @@
 
 ## 산출물
 
-- `src/content/level1_item01.md`
+- `src/content/ko/level1_item01.md`
+- `src/content/vi/level1_item01.md`
 - `src/templates/pdf_template.html`
 - `scripts/build-pdf.mjs`
-- `output/html/level1_item01.html`
-- `output/pdf/level1_item01_sample.pdf`
+- `output/html/ko/level1_item01.html`
+- `output/pdf/ko/level1_item01.pdf`

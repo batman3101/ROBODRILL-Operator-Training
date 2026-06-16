@@ -1,14 +1,36 @@
-import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { spawnSync } from "node:child_process";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const contentPath = join(root, "src", "content", "level1_item01.md");
 const templatePath = join(root, "src", "templates", "pdf_template.html");
-const htmlOutputPath = join(root, "output", "html", "level1_item01.html");
-const pdfOutputPath = join(root, "output", "pdf", "level1_item01_sample.pdf");
 const htmlOnly = process.argv.includes("--html-only");
+const buildAll = process.argv.includes("--all");
+const buildBook = process.argv.includes("--book");
+const lang = valueFor("--lang") ?? "ko";
+const item = valueFor("--item") ?? "01";
+
+const labels = {
+  ko: {
+    title: "FANUC ROBODRILL 기초과정",
+    header: "FANUC ROBODRILL 기초과정 | Level 1",
+    footer: "HTML/CSS 기반 PDF",
+    bookName: "fanuc_robodrill_level1_manual_ko"
+  },
+  vi: {
+    title: "Giáo trình cơ bản FANUC ROBODRILL",
+    header: "Giáo trình cơ bản FANUC ROBODRILL | Level 1",
+    footer: "PDF tạo từ HTML/CSS",
+    bookName: "fanuc_robodrill_level1_manual_vi"
+  }
+};
+
+function valueFor(name) {
+  const index = process.argv.indexOf(name);
+  if (index === -1) return undefined;
+  return process.argv[index + 1];
+}
 
 function ensureDir(path) {
   mkdirSync(path, { recursive: true });
@@ -153,7 +175,7 @@ function markdownToHtml(markdown, baseDir) {
     if (quote) {
       closeParagraph();
       closeList();
-      const klass = /안전|주의|경고/.test(quote[1]) ? "callout warning" : "callout";
+      const klass = /안전|주의|경고|an toàn|Chú ý/i.test(quote[1]) ? "callout warning" : "callout";
       output.push(`<blockquote class="${klass}">${inlineMarkdown(quote[1], baseDir)}</blockquote>`);
       continue;
     }
@@ -207,7 +229,7 @@ function fontCss() {
   return `
     @font-face {
       font-family: "ManualKR";
-      src: local("Noto Sans KR"), local("NotoSansKR-Regular"), local("Malgun Gothic");
+      src: local("Noto Sans KR"), local("Noto Sans"), local("Segoe UI"), local("Malgun Gothic");
       font-weight: 400 800;
       font-style: normal;
       font-display: swap;
@@ -227,51 +249,110 @@ function findBrowser() {
   return candidates.find((candidate) => existsSync(candidate));
 }
 
-function buildHtml() {
-  const markdown = readFileSync(contentPath, "utf8");
+function renderHtml(markdown, sourceDir, outputPath, currentLang, title) {
+  const copy = labels[currentLang] ?? labels.ko;
   const template = readFileSync(templatePath, "utf8");
-  const content = markdownToHtml(markdown, dirname(contentPath));
+  const content = markdownToHtml(markdown, sourceDir);
   const html = template
-    .replaceAll("{{TITLE}}", "FANUC ROBODRILL 초보자 교육 매뉴얼 - Level 1 Item 01")
+    .replaceAll("{{LANG}}", currentLang)
+    .replaceAll("{{TITLE}}", title)
     .replace("{{FONT_CSS}}", fontCss())
+    .replaceAll("{{HEADER}}", copy.header)
+    .replaceAll("{{FOOTER}}", copy.footer)
     .replace("{{CONTENT}}", content)
     .replaceAll("{{DATE}}", new Date().toISOString().slice(0, 10));
 
-  ensureDir(dirname(htmlOutputPath));
-  writeFileSync(htmlOutputPath, html, "utf8");
+  ensureDir(dirname(outputPath));
+  writeFileSync(outputPath, html, "utf8");
 }
 
-function buildPdf() {
+function printPdf(htmlPath, pdfPath) {
   const browser = findBrowser();
   if (!browser) {
-    throw new Error("Chrome 또는 Edge를 찾지 못했습니다. CHROME_PATH 환경 변수로 브라우저 실행 파일 경로를 지정하세요.");
+    throw new Error("Chrome or Edge was not found. Set CHROME_PATH to the browser executable.");
   }
 
-  ensureDir(dirname(pdfOutputPath));
+  ensureDir(dirname(pdfPath));
   const result = spawnSync(browser, [
     "--headless=new",
     "--disable-gpu",
     "--no-sandbox",
     "--no-pdf-header-footer",
     "--print-to-pdf-no-header",
-    `--print-to-pdf=${pdfOutputPath}`,
-    pathToFileURL(htmlOutputPath).href
+    `--print-to-pdf=${pdfPath}`,
+    pathToFileURL(htmlPath).href
   ], {
     cwd: root,
     encoding: "utf8"
   });
 
   if (result.status !== 0) {
-    throw new Error(`PDF 생성 실패:\n${result.stderr || result.stdout}`);
+    throw new Error(`PDF generation failed:\n${result.stderr || result.stdout}`);
   }
 
-  if (!existsSync(pdfOutputPath) || statSync(pdfOutputPath).size < 1024) {
-    throw new Error("PDF 파일이 생성되지 않았거나 비어 있습니다.");
+  if (!existsSync(pdfPath) || statSync(pdfPath).size < 1024) {
+    throw new Error(`PDF was not created or is empty: ${pdfPath}`);
   }
 }
 
-buildHtml();
-if (!htmlOnly) buildPdf();
+function contentDir(currentLang) {
+  return join(root, "src", "content", currentLang);
+}
 
-console.log(`HTML: ${htmlOutputPath}`);
-if (!htmlOnly) console.log(`PDF: ${pdfOutputPath}`);
+function contentFiles(currentLang) {
+  return readdirSync(contentDir(currentLang))
+    .filter((name) => /^level1_item\d{2}\.md$/.test(name))
+    .sort();
+}
+
+function buildItem(currentLang, itemId) {
+  const copy = labels[currentLang] ?? labels.ko;
+  const sourceDir = contentDir(currentLang);
+  const contentPath = join(sourceDir, `level1_item${itemId}.md`);
+  const markdown = readFileSync(contentPath, "utf8");
+  const htmlOutputPath = join(root, "output", "html", currentLang, `level1_item${itemId}.html`);
+  const pdfOutputPath = join(root, "output", "pdf", currentLang, `level1_item${itemId}.pdf`);
+  renderHtml(markdown, sourceDir, htmlOutputPath, currentLang, `${copy.title} - Item ${itemId}`);
+  if (!htmlOnly) printPdf(htmlOutputPath, pdfOutputPath);
+  console.log(`HTML: ${htmlOutputPath}`);
+  if (!htmlOnly) console.log(`PDF: ${pdfOutputPath}`);
+}
+
+function buildFullBook(currentLang) {
+  const copy = labels[currentLang] ?? labels.ko;
+  const sourceDir = contentDir(currentLang);
+  const files = contentFiles(currentLang);
+  const markdown = files
+    .map((name, index) => {
+      const content = readFileSync(join(sourceDir, name), "utf8");
+      return index === 0 ? content : `[PAGE_BREAK]\n\n${content}`;
+    })
+    .join("\n\n");
+  const htmlOutputPath = join(root, "output", "html", currentLang, `${copy.bookName}.html`);
+  const pdfOutputPath = join(root, "output", "pdf", currentLang, `${copy.bookName}.pdf`);
+  renderHtml(markdown, sourceDir, htmlOutputPath, currentLang, copy.title);
+  if (!htmlOnly) printPdf(htmlOutputPath, pdfOutputPath);
+  console.log(`BOOK HTML: ${htmlOutputPath}`);
+  if (!htmlOnly) console.log(`BOOK PDF: ${pdfOutputPath}`);
+}
+
+function run() {
+  if (buildAll) {
+    for (const currentLang of ["ko", "vi"]) {
+      for (const name of contentFiles(currentLang)) {
+        buildItem(currentLang, name.match(/\d{2}/)[0]);
+      }
+      buildFullBook(currentLang);
+    }
+    return;
+  }
+
+  if (buildBook) {
+    buildFullBook(lang);
+    return;
+  }
+
+  buildItem(lang, item);
+}
+
+run();

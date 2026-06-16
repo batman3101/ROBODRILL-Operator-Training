@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="{{LANG}}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,7 @@
       margin: 0;
       padding: 0;
       color: var(--ink);
-      font-family: "ManualKR", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-family: "ManualKR", "Noto Sans KR", "Noto Sans", "Segoe UI", Arial, "Malgun Gothic", sans-serif;
       font-size: 10.2pt;
       line-height: 1.54;
       word-break: keep-all;
@@ -263,8 +263,8 @@
   </style>
 </head>
 <body>
-  <div class="print-header">FANUC ROBODRILL 초보자 교육 매뉴얼 | Level 1 - Item 01</div>
-  <div class="print-footer">HTML/CSS 기반 PDF 샘플 | {{DATE}}</div>
+  <div class="print-header">{{HEADER}}</div>
+  <div class="print-footer">{{FOOTER}} | {{DATE}}</div>
   <main>
     {{CONTENT}}
   </main>

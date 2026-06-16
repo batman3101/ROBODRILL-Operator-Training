@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giáo trình cơ bản FANUC ROBODRILL - Item 14</title>
+  <style>
+    
+    @font-face {
+      font-family: "ManualKR";
+      src: local("Noto Sans KR"), local("Noto Sans"), local("Segoe UI"), local("Malgun Gothic");
+      font-weight: 400 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --ink: #18202a;
+      --muted: #5b6472;
+      --line: #d8dde6;
+      --soft: #eef3f8;
+      --accent: #176f8f;
+      --accent-dark: #0d4e67;
+      --warning-bg: #fff3d8;
+      --warning-line: #d6901f;
+      --practice-bg: #eef8f3;
+    }
+
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--ink);
+      font-family: "ManualKR", "Noto Sans KR", "Noto Sans", "Segoe UI", Arial, "Malgun Gothic", sans-serif;
+      font-size: 10.2pt;
+      line-height: 1.54;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    body {
+      background: white;
+    }
+
+    .print-header,
+    .print-footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      color: var(--muted);
+      font-size: 8.5pt;
+      line-height: 1.2;
+    }
+
+    .print-header {
+      top: -10mm;
+      border-bottom: 0.2mm solid var(--line);
+      padding-bottom: 2mm;
+    }
+
+    .print-footer {
+      bottom: -10mm;
+      border-top: 0.2mm solid var(--line);
+      padding-top: 2mm;
+      text-align: right;
+    }
+
+    main {
+      width: 100%;
+    }
+
+    .cover {
+      min-height: 238mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8mm 0 4mm;
+    }
+
+    .cover-mark {
+      width: 30mm;
+      height: 5mm;
+      background: var(--accent);
+      margin-bottom: 22mm;
+    }
+
+    .cover h1 {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: 31pt;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .cover .subtitle {
+      margin-top: 8mm;
+      color: var(--muted);
+      font-size: 14pt;
+      line-height: 1.5;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: 30mm 1fr;
+      gap: 3mm 8mm;
+      padding-top: 14mm;
+      border-top: 0.4mm solid var(--line);
+      color: var(--muted);
+      font-size: 10pt;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--accent-dark);
+      line-height: 1.35;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    h1 {
+      margin: 0 0 9mm;
+      font-size: 23pt;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 6.5mm 0 3.2mm;
+      padding-bottom: 1.4mm;
+      border-bottom: 0.35mm solid var(--line);
+      font-size: 17pt;
+      font-weight: 800;
+    }
+
+    h3 {
+      margin: 4.8mm 0 2mm;
+      font-size: 12.8pt;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0 0 2.8mm;
+    }
+
+    strong {
+      font-weight: 800;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 3.2mm 6mm;
+      padding-left: 5mm;
+    }
+
+    li {
+      margin-bottom: 1.4mm;
+      padding-left: 1mm;
+    }
+
+    table {
+      width: 100%;
+      margin: 3.2mm 0 4mm;
+      border-collapse: collapse;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      font-size: 9.6pt;
+    }
+
+    th,
+    td {
+      border: 0.25mm solid var(--line);
+      padding: 1.8mm 2.2mm;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-weight: 800;
+    }
+
+    blockquote,
+    .callout {
+      margin: 4mm 0;
+      padding: 3.5mm 4mm;
+      border-left: 1.2mm solid var(--accent);
+      background: var(--soft);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .warning {
+      border-left-color: var(--warning-line);
+      background: var(--warning-bg);
+    }
+
+    .practice {
+      border-left-color: #3b936a;
+      background: var(--practice-bg);
+    }
+
+    figure {
+      margin: 5mm 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    figure img,
+    p img {
+      display: block;
+      max-width: 100%;
+      max-height: 82mm;
+      margin: 3mm auto;
+      border: 0.25mm solid var(--line);
+      background: white;
+    }
+
+    figcaption,
+    .caption {
+      margin-top: 1.5mm;
+      color: var(--muted);
+      font-size: 8.8pt;
+      text-align: center;
+    }
+
+    code {
+      padding: 0.3mm 1mm;
+      border-radius: 1mm;
+      background: #f3f5f7;
+      color: #334155;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 9pt;
+    }
+
+    pre {
+      margin: 4mm 0;
+      padding: 3mm;
+      background: #f3f5f7;
+      border: 0.25mm solid var(--line);
+      white-space: pre-wrap;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .page-break {
+      break-before: page;
+      page-break-before: always;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="print-header">Giáo trình cơ bản FANUC ROBODRILL | Level 1</div>
+  <div class="print-footer">PDF tạo từ HTML/CSS | 2026-06-16</div>
+  <main>
+    <section class="cover">
+<div>
+<div class="cover-mark"></div>
+<h1>Giáo trình cơ bản FANUC ROBODRILL</h1>
+<p class="subtitle">Level 1 - Item 14<br>Quản lý dung dịch cắt và phoi</p>
+</div>
+<div class="cover-meta">
+<strong>Đối tượng</strong><span>Người vận hành mới, nhân viên chất lượng và nhân viên bảo trì thiết bị</span>
+<strong>Mục tiêu</strong><span>Hiểu ảnh hưởng của hướng tưới nguội, mức dung dịch và thoát phoi đến an toàn và chất lượng.</span>
+<strong>Hình thức</strong><span>Mục tiêu, an toàn, hình ảnh thực tế, quy trình, thực hành, câu hỏi kiểm tra</span>
+</div>
+</section>
+<div class="page-break"></div>
+<h1>14. Quản lý dung dịch cắt và phoi</h1>
+<p>Mục này giúp học viên mới hiểu và giải thích an toàn nội dung Quản lý dung dịch cắt và phoi. Hiểu ảnh hưởng của hướng tưới nguội, mức dung dịch và thoát phoi đến an toàn và chất lượng. Người vận hành không chỉ học tên nút mà phải đọc trạng thái máy, dự đoán hành động tiếp theo và nhận biết vị trí nguy hiểm trước khi thao tác. Mọi thao tác được thực hiện theo thứ tự kiểm tra, chọn, thực hiện, quan sát và ghi lại.</p>
+<blockquote class="callout warning">Chú ý an toàn: Khi thao tác trên máy thật, luôn tuân thủ quy định an toàn tại xưởng, tài liệu của nhà sản xuất, tiêu chuẩn công việc nội bộ và hướng dẫn của giảng viên. Nếu chưa chắc chắn, hãy dừng lại và báo cáo trạng thái.</blockquote>
+<h2>Mục tiêu đào tạo</h2>
+<ul>
+<li>Hiểu ảnh hưởng của hướng tưới nguội, mức dung dịch và thoát phoi đến an toàn và chất lượng.</li>
+<li>Giải thích được nút liên quan, thông tin trên màn hình và phản ứng của máy.</li>
+<li>Kiểm tra các hạng mục an toàn trước thao tác bằng checklist.</li>
+<li>Phân biệt trạng thái bình thường và bất thường để báo cáo cho giảng viên.</li>
+<li>Ghi lại kết quả thực hành vào phiếu công việc.</li>
+</ul>
+<table>
+<thead><tr><th>Nhóm</th><th>Hành động học viên cần làm</th><th>Tiêu chuẩn đạt</th></tr></thead>
+<tbody>
+<tr><td>Hiểu</td><td>Giải thích mục đích của Quản lý dung dịch cắt và phoi</td><td>Dùng ít nhất 3 thuật ngữ chính</td></tr>
+<tr><td>Kiểm tra</td><td>Tìm yếu tố nguy hiểm trước thao tác</td><td>Kiểm tra vùng làm việc, màn hình và override</td></tr>
+<tr><td>Thực hiện</td><td>Làm từng bước dưới sự giám sát</td><td>Không thao tác nhanh, luôn dừng để xác nhận</td></tr>
+<tr><td>Ghi nhận</td><td>Ghi kết quả và bất thường</td><td>Có ngày, trạng thái máy và người xác nhận</td></tr>
+</tbody></table>
+<div class="page-break"></div>
+<h2>An toàn</h2>
+<p>Thời điểm nguy hiểm nhất trong Quản lý dung dịch cắt và phoi là khi người vận hành chạy bước tiếp theo mà chưa đọc trạng thái máy. Trục chính, chuyển động trục, thay dao, nhập tọa độ và chạy chương trình đều có thể biến thao tác trên màn hình thành chuyển động thật. Học viên phải nhìn đồng thời số trên màn hình và vị trí dao thật.</p>
+<table>
+<thead><tr><th>Tình huống nguy hiểm</th><th>Nguyên nhân</th><th>Cách phòng tránh</th></tr></thead>
+<tbody>
+<tr><td>Trục đi sai hướng</td><td>Nhầm trục, hướng hoặc hệ tọa độ</td><td>Nói rõ trục và hướng trước khi chạy</td></tr>
+<tr><td>Va chạm</td><td>Không nhìn khoảng cách dao, phôi, đồ gá</td><td>Tiếp cận bằng tốc độ thấp và bước ngắn</td></tr>
+<tr><td>Khởi động lại sai</td><td>Không kiểm tra nguyên nhân alarm</td><td>Ghi mã alarm và điều kiện phát sinh</td></tr>
+<tr><td>Lỗi chất lượng</td><td>Bỏ sót giá trị bù hoặc mặt chuẩn</td><td>Đối chiếu phiếu ghi và màn hình</td></tr>
+</tbody></table>
+<blockquote class="callout warning">Chú ý an toàn: Emergency stop là lớp bảo vệ cuối cùng. Trước khi cần dùng nó, hãy giảm override, dừng lại và xác nhận khi có nghi ngờ.</blockquote>
+<div class="page-break"></div>
+<h2>Hình ảnh thực tế và điểm quan sát</h2>
+<p><img src="file:///C:/Users/USER/OneDrive/%EB%AC%B8%EC%84%9C/fanuc-robodrill-manual/src/assets/images/fanuc_robodrill_real_wikimedia.jpg" alt="Hình tham khảo Quản lý dung dịch cắt và phoi"></p>
+<p class="caption">Hình 14-1. Hình tham khảo cho bài Quản lý dung dịch cắt và phoi. Nguồn và quyền sử dụng được ghi trong tài liệu nguồn hình ảnh.</p>
+<p>Khi quan sát hình, không nên nhìn toàn bộ máy một cách chung chung. Hãy bắt đầu từ vị trí ảnh hưởng trực tiếp đến người vận hành. Thứ nhất, tìm vùng nguy hiểm nơi tay hoặc cơ thể có thể đi vào. Thứ hai, liên hệ nút hoặc màn hình với cơ cấu sẽ chuyển động. Thứ ba, xác định vị trí có thể dừng máy ngay khi có bất thường.</p>
+<h2>Khái niệm cốt lõi</h2>
+<p>Điểm cốt lõi của Quản lý dung dịch cắt và phoi không chỉ là nhớ quy trình, mà là hiểu vì sao quy trình đó tồn tại. ROBODRILL là máy nhỏ và nhanh, nên một lần bỏ sót kiểm tra cũng có thể dẫn tới va chạm hoặc lỗi chất lượng. Vì vậy ở cấp cơ bản, thói quen quan sát an toàn quan trọng hơn tốc độ thao tác.</p>
+<table>
+<thead><tr><th>Thuật ngữ</th><th>Ý nghĩa</th><th>Kiểm tra tại hiện trường</th></tr></thead>
+<tbody>
+<tr><td>Kiểm tra trạng thái</td><td>Đọc máy đang ở mode và điều kiện nào</td><td>Màn hình, đèn, alarm, override</td></tr>
+<tr><td>Điều kiện chạy</td><td>Trạng thái máy có thể chuyển động</td><td>Cửa, Servo, tọa độ, dao</td></tr>
+<tr><td>Khoảng cách quan sát</td><td>Khoảng hở giữa dao và phôi</td><td>Càng gần càng giảm tốc độ và lượng di chuyển</td></tr>
+<tr><td>Ghi nhận</td><td>Bằng chứng để người sau hiểu</td><td>Giá trị, alarm, xử lý, người xác nhận</td></tr>
+</tbody></table>
+<div class="page-break"></div>
+<h2>Quy trình từng bước</h2>
+<p>Quy trình sau là luồng đào tạo cơ bản. Nếu xưởng có quy trình riêng, phải ưu tiên quy trình của xưởng.</p>
+<ol>
+<li>Kiểm tra khu vực xung quanh, bảo hộ và vị trí emergency stop.</li>
+<li>Đọc mode hiện tại, alarm và trạng thái chương trình trên màn hình CNC.</li>
+<li>Kiểm tra dao, phôi, đồ gá và phoi trong vùng làm việc.</li>
+<li>Tìm nút hoặc menu cần dùng cho Quản lý dung dịch cắt và phoi và nói tên của nó.</li>
+<li>Đặt override và điều kiện chuyển động ở mức rủi ro thấp.</li>
+<li>Báo cáo cho giảng viên bằng một câu về thao tác sắp làm.</li>
+<li>Chạy một bước ngắn rồi dừng để quan sát phản ứng thật của máy.</li>
+<li>Chỉ chuyển sang bước tiếp theo khi không có bất thường.</li>
+</ol>
+<div class="callout practice">
+<p>Thực hành: Tại vị trí đào tạo do giảng viên chỉ định, học viên nói to quy trình Quản lý dung dịch cắt và phoi, sau đó thực hiện từng bước và dừng lại sau mỗi bước. Sau mỗi bước, học viên mô tả trạng thái màn hình và trạng thái máy thật.</p>
+</div>
+<div class="page-break"></div>
+<h2>Checklist tại hiện trường</h2>
+<table>
+<thead><tr><th>Hạng mục kiểm tra</th><th>Tiêu chuẩn bình thường</th><th>Xử lý khi bất thường</th></tr></thead>
+<tbody>
+<tr><td>Khu vực xung quanh</td><td>Lối đi, sàn và bàn thao tác gọn gàng</td><td>Dọn lại rồi bắt đầu</td></tr>
+<tr><td>Màn hình</td><td>Không có alarm hoặc thông báo bất thường</td><td>Ghi mã alarm và báo cáo</td></tr>
+<tr><td>Bên trong máy</td><td>Dao, đồ gá, phôi cố định và không va chạm</td><td>Kiểm tra lại gá đặt</td></tr>
+<tr><td>Override</td><td>Đặt thấp phù hợp cho thực hành cơ bản</td><td>Điều chỉnh theo giảng viên</td></tr>
+<tr><td>Phiếu ghi</td><td>Có người thao tác, ngày và số máy</td><td>Bổ sung mục thiếu</td></tr>
+</tbody></table>
+<p>Checklist không phải là giấy tờ hình thức. Nó là công cụ giảm tai nạn. Dù đã checklist xong, nếu chuyển động thật khác dự đoán thì phải dừng ngay.</p>
+<div class="page-break"></div>
+<h2>Thực hành</h2>
+<h3>Thực hành A: Đọc trạng thái</h3>
+<ol>
+<li>Đọc mode hiện tại và trạng thái alarm trên màn hình.</li>
+<li>Tìm vị trí nguy hiểm gần nhất trong vùng làm việc.</li>
+<li>Nói 5 hạng mục cần kiểm tra trước Quản lý dung dịch cắt và phoi.</li>
+<li>Báo cáo trạng thái hiện tại cho giảng viên.</li>
+</ol>
+<h3>Thực hành B: Thực hiện quy trình</h3>
+<ol>
+<li>Thực hiện bước đầu tiên trong điều kiện an toàn do giảng viên chỉ định.</li>
+<li>So sánh số trên màn hình với chuyển động thật.</li>
+<li>Nếu khác dự đoán, dừng ngay và nói nguyên nhân nghi ngờ.</li>
+<li>Nếu bình thường, chuyển sang bước tiếp theo.</li>
+</ol>
+<h3>Thực hành C: Ghi nhận</h3>
+<p>Ghi kết quả thực hành, bất thường và câu hỏi. Nội dung ghi phải đủ cụ thể để người sau và giảng viên hiểu lại cùng một tình huống.</p>
+<div class="page-break"></div>
+<h2>Lỗi thường gặp và phòng tránh</h2>
+<table>
+<thead><tr><th>Lỗi thường gặp</th><th>Vì sao nguy hiểm</th><th>Câu hỏi phòng tránh</th></tr></thead>
+<tbody>
+<tr><td>Bấm nút trước</td><td>Bỏ sót trạng thái màn hình</td><td>Mode hiện tại là gì</td></tr>
+<tr><td>Đoán hướng</td><td>Có thể đi ngược hướng</td><td>Trục nào sẽ đi theo hướng nào</td></tr>
+<tr><td>Xóa alarm</td><td>Nguyên nhân vẫn còn</td><td>Đã ghi mã alarm chưa</td></tr>
+<tr><td>Không ghi lại</td><td>Người sau không biết điều kiện</td><td>Người khác có tái hiện được không</td></tr>
+</tbody></table>
+<p>Năng lực quan trọng nhất của người mới không phải là thao tác nhanh, mà là biết dừng an toàn và giải thích. Khi nghe tiếng lạ, thấy chuyển động khác dự đoán, alarm, vấn đề dung dịch cắt hoặc dao rung, hãy dừng và báo cáo.</p>
+<div class="page-break"></div>
+<h2>Câu hỏi kiểm tra</h2>
+<h3>Trắc nghiệm</h3>
+<ol>
+<li>Việc đầu tiên cần kiểm tra trước Quản lý dung dịch cắt và phoi là gì?</li>
+</ol>
+<ul>
+<li>A. Tăng tốc độ lên cao nhất</li>
+<li>B. Kiểm tra mode hiện tại, alarm và vùng làm việc</li>
+<li>C. Chạy chương trình ngay</li>
+<li>D. Ghi phiếu sau cũng được</li>
+</ul>
+<ol>
+<li>Khi thấy máy chuyển động khác dự đoán, hành động đầu tiên là gì?</li>
+</ol>
+<ul>
+<li>A. Tiếp tục chạy</li>
+<li>B. Dừng ngay và kiểm tra trạng thái</li>
+<li>C. Chỉ xóa alarm</li>
+<li>D. Tăng override</li>
+</ul>
+<h3>Tự luận ngắn</h3>
+<ol>
+<li>Viết 5 hạng mục cần kiểm tra trước Quản lý dung dịch cắt và phoi.</li>
+<li>Giải thích vì sao nên bắt đầu với override thấp.</li>
+<li>Viết 3 thông tin cần có khi báo cáo bất thường.</li>
+</ol>
+<div class="page-break"></div>
+<h2>Đáp án và ghi chú cho giảng viên</h2>
+<p>Đáp án trắc nghiệm: câu 1 là B, câu 2 là B. Với phần tự luận, câu trả lời cần bao gồm các ý phù hợp như khu vực xung quanh, alarm, mode hiện tại, vùng làm việc, tình trạng dao, gá phôi, override và phiếu ghi.</p>
+<p>Giảng viên không chỉ kiểm tra học viên có nhớ quy trình hay không. Cần kiểm tra học viên có giải thích được vì sao phải dừng và xác nhận ở từng bước hay không. Quản lý dung dịch cắt và phoi liên kết với bài tiếp theo, nên sau thực hành phải luôn để lại câu hỏi và ghi nhận.</p>
+<h2>Liên kết với mục tiếp theo</h2>
+<p>Bài tiếp theo là 15 Kẹp phôi và ê tô. Thói quen kiểm tra trạng thái, dừng an toàn và ghi nhận trong bài này sẽ tiếp tục được dùng ở bài sau.</p>
+  </main>
+</body>
+</html>

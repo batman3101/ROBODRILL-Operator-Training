@@ -35,16 +35,24 @@ fanuc-robodrill-manual/
 └─ package.json
 ```
 
-## 샘플 PDF 생성
+## 교재 생성
 
 ```bash
-npm run pdf:sample
+npm run build
 ```
 
 생성 결과:
 
-- HTML: `output/html/level1_item01.html`
-- PDF: `output/pdf/level1_item01_sample.pdf`
+- 한국어 항목별 HTML/PDF: `output/html/ko/`, `output/pdf/ko/`
+- 베트남어 항목별 HTML/PDF: `output/html/vi/`, `output/pdf/vi/`
+- 한국어 통합본: `output/html/ko/fanuc_robodrill_level1_manual_ko.html`, `output/pdf/ko/fanuc_robodrill_level1_manual_ko.pdf`
+- 베트남어 통합본: `output/html/vi/fanuc_robodrill_level1_manual_vi.html`, `output/pdf/vi/fanuc_robodrill_level1_manual_vi.pdf`
+
+샘플 항목만 다시 만들 때:
+
+```bash
+npm run pdf:sample
+```
 
 이 방식은 reportlab으로 PDF를 직접 조립하지 않고, HTML/CSS를 먼저 만든 다음 Chrome 또는 Edge의 인쇄 엔진으로 PDF를 출력합니다.
 
