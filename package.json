@@ -1,0 +1,15 @@
+{
+  "name": "fanuc-robodrill-manual",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "FANUC ROBODRILL beginner training manual PDF generator using HTML and CSS.",
+  "scripts": {
+    "build:html": "node scripts/build-pdf.mjs --html-only",
+    "pdf:sample": "node scripts/build-pdf.mjs",
+    "build": "npm run pdf:sample"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

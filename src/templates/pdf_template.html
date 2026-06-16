@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <style>
+    {{FONT_CSS}}
+
+    :root {
+      --ink: #18202a;
+      --muted: #5b6472;
+      --line: #d8dde6;
+      --soft: #eef3f8;
+      --accent: #176f8f;
+      --accent-dark: #0d4e67;
+      --warning-bg: #fff3d8;
+      --warning-line: #d6901f;
+      --practice-bg: #eef8f3;
+    }
+
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      color: var(--ink);
+      font-family: "ManualKR", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-size: 10.2pt;
+      line-height: 1.54;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    body {
+      background: white;
+    }
+
+    .print-header,
+    .print-footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      color: var(--muted);
+      font-size: 8.5pt;
+      line-height: 1.2;
+    }
+
+    .print-header {
+      top: -10mm;
+      border-bottom: 0.2mm solid var(--line);
+      padding-bottom: 2mm;
+    }
+
+    .print-footer {
+      bottom: -10mm;
+      border-top: 0.2mm solid var(--line);
+      padding-top: 2mm;
+      text-align: right;
+    }
+
+    main {
+      width: 100%;
+    }
+
+    .cover {
+      min-height: 238mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8mm 0 4mm;
+    }
+
+    .cover-mark {
+      width: 30mm;
+      height: 5mm;
+      background: var(--accent);
+      margin-bottom: 22mm;
+    }
+
+    .cover h1 {
+      margin: 0;
+      color: var(--accent-dark);
+      font-size: 31pt;
+      line-height: 1.18;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .cover .subtitle {
+      margin-top: 8mm;
+      color: var(--muted);
+      font-size: 14pt;
+      line-height: 1.5;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: 30mm 1fr;
+      gap: 3mm 8mm;
+      padding-top: 14mm;
+      border-top: 0.4mm solid var(--line);
+      color: var(--muted);
+      font-size: 10pt;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--accent-dark);
+      line-height: 1.35;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    h1 {
+      margin: 0 0 9mm;
+      font-size: 23pt;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 6.5mm 0 3.2mm;
+      padding-bottom: 1.4mm;
+      border-bottom: 0.35mm solid var(--line);
+      font-size: 17pt;
+      font-weight: 800;
+    }
+
+    h3 {
+      margin: 4.8mm 0 2mm;
+      font-size: 12.8pt;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0 0 2.8mm;
+    }
+
+    strong {
+      font-weight: 800;
+    }
+
+    ul,
+    ol {
+      margin: 0 0 3.2mm 6mm;
+      padding-left: 5mm;
+    }
+
+    li {
+      margin-bottom: 1.4mm;
+      padding-left: 1mm;
+    }
+
+    table {
+      width: 100%;
+      margin: 3.2mm 0 4mm;
+      border-collapse: collapse;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      font-size: 9.6pt;
+    }
+
+    th,
+    td {
+      border: 0.25mm solid var(--line);
+      padding: 1.8mm 2.2mm;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--soft);
+      color: var(--accent-dark);
+      font-weight: 800;
+    }
+
+    blockquote,
+    .callout {
+      margin: 4mm 0;
+      padding: 3.5mm 4mm;
+      border-left: 1.2mm solid var(--accent);
+      background: var(--soft);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .warning {
+      border-left-color: var(--warning-line);
+      background: var(--warning-bg);
+    }
+
+    .practice {
+      border-left-color: #3b936a;
+      background: var(--practice-bg);
+    }
+
+    figure {
+      margin: 5mm 0;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    figure img,
+    p img {
+      display: block;
+      max-width: 100%;
+      max-height: 82mm;
+      margin: 3mm auto;
+      border: 0.25mm solid var(--line);
+      background: white;
+    }
+
+    figcaption,
+    .caption {
+      margin-top: 1.5mm;
+      color: var(--muted);
+      font-size: 8.8pt;
+      text-align: center;
+    }
+
+    code {
+      padding: 0.3mm 1mm;
+      border-radius: 1mm;
+      background: #f3f5f7;
+      color: #334155;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 9pt;
+    }
+
+    pre {
+      margin: 4mm 0;
+      padding: 3mm;
+      background: #f3f5f7;
+      border: 0.25mm solid var(--line);
+      white-space: pre-wrap;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .page-break {
+      break-before: page;
+      page-break-before: always;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 9pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="print-header">FANUC ROBODRILL 초보자 교육 매뉴얼 | Level 1 - Item 01</div>
+  <div class="print-footer">HTML/CSS 기반 PDF 샘플 | {{DATE}}</div>
+  <main>
+    {{CONTENT}}
+  </main>
+</body>
+</html>
